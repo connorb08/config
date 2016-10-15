@@ -1,1 +1,33 @@
-/home/connor/.vimrc
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shutnik/jshint2.vim'
+Plugin 'Townk/vim-autoclose'
+Plugin 'alvan/vim-closetag'
+
+call vundle#end()
+filetype plugin indent on
+
+colorscheme gruvbox
+syntax on
+set background=dark
+map <C-n> :NERDTreeToggle<CR>
+set laststatus=2
+set backspace=2
+let g:neocomplete#enable_at_startup = 1
+let g:syntastic_javascript_checkers = ['jshint']
+
+nnoremap ; :
+command WQ wq
+command Wq wq
+command W w
+command Q q
