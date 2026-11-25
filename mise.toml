@@ -66,6 +66,13 @@ run = 'nu --no-config-file "{{ config_root }}/scripts/dotfiles-sync.nu" "{{ conf
 description = "Run dotfiles:sync every 10 minutes (the dotfiles-sync service)"
 run = 'nu --no-config-file "{{ config_root }}/scripts/dotfiles-autosync.nu" "{{ config_root }}" "{{ mise_bin }}"'
 
+# The sync service's launcher (see mise.sync.toml): a fixed path that leads back
+# to this checkout, wherever it is cloned.
+[dotfiles."dotfiles-autosync"]
+source = "scripts/dotfiles-autosync.sh"
+mode = "symlink"
+variants = [{ os = "unix", target = "~/.local/bin/dotfiles-autosync" }]
+
 # Files that applications rewrite themselves (editor settings and the like)
 # can be tracked in place with `mise dot track <path>` and synced through a
 # separate private repository. Declare its opt-in service in mise.sync.toml.

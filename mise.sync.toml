@@ -1,15 +1,13 @@
-# Run these from the checkout, wherever it is cloned:
+# Run these from the checkout, wherever it is cloned (after `mise dot apply`):
 #   Enable: mise -E sync bootstrap services apply
 #   Check:  mise -E sync bootstrap services status
 #   Remove: mise -E sync bootstrap services remove dotfiles-sync
 [bootstrap.services.dotfiles-sync]
 scope = "user"
 description = "Commit, pull and push the dotfiles checkout every 10 minutes"
-# Service commands are not templated ({{ config_root }} stays literal) and run
-# with launchd/systemd's bare PATH. So the shell finds the checkout itself, by
-# following the ~/.config/starship.toml link that `mise dot apply` points into
-# it (clone it anywhere, apply the dotfiles first), and mise is looked up in
-# its usual install locations. macOS/Linux only (needs /bin/sh).
-command = "/bin/sh -c 'link=$(readlink -f \"$HOME/.config/starship.toml\") && repo=${link%/dotfiles/*} && cd \"$repo\" && PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\" exec mise run dotfiles:autosync'"
+# Runs scripts/dotfiles-autosync.sh through its ~/.local/bin link, which finds
+# the checkout and mise. The command holds no $: systemd would expand it itself.
+# macOS/Linux only (needs /bin/sh).
+command = "/bin/sh -c 'exec ~/.local/bin/dotfiles-autosync'"
 restart = "always"
 requires_tools = true
