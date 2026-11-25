@@ -44,10 +44,7 @@ vim.opt.confirm = true
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit window" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Window left" })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Window down" })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Window up" })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Window right" })
+-- Ctrl-h/j/k/l move between windows: vim-tmux-navigator (lua/plugins/editor.lua).
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left, keep selection" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right, keep selection" })
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Plugins (lazy.nvim)" })

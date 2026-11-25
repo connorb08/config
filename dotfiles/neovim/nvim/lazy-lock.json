@@ -14,6 +14,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "0dc0cfb0c6858041174a53c7aa4adaf65e994b3c" },
   "one_monokai.nvim": { "branch": "main", "commit": "068ab8aa4c2a3daae6ebadbe1c077e75bddeda0b" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "fb217852efb294a50a10507fc8d53709696b6e23" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
   "yazi.nvim": { "branch": "main", "commit": "299f3e4ea2855613b18b9b3495b93b96a1abd9b7" }
 }

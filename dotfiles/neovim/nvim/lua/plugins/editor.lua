@@ -60,4 +60,18 @@ return {
 
   -- Add, delete and replace surroundings: sa, sd, sr
   { "nvim-mini/mini.surround", event = "VeryLazy", opts = {} },
+
+  -- Ctrl-h/j/k/l move between windows, and on into the next tmux pane at the
+  -- edge (its tmux half is in dotfiles/tmux/tmux.conf). Outside tmux they just
+  -- move between windows.
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = { "TmuxNavigateLeft", "TmuxNavigateDown", "TmuxNavigateUp", "TmuxNavigateRight" },
+    keys = {
+      { "<C-h>", "<cmd>TmuxNavigateLeft<cr>", desc = "Window/pane left" },
+      { "<C-j>", "<cmd>TmuxNavigateDown<cr>", desc = "Window/pane down" },
+      { "<C-k>", "<cmd>TmuxNavigateUp<cr>", desc = "Window/pane up" },
+      { "<C-l>", "<cmd>TmuxNavigateRight<cr>", desc = "Window/pane right" },
+    },
+  },
 }

@@ -1,5 +1,7 @@
+# The sync runs unattended over SSH, so no credential helper: on macOS the
+# default one (osxkeychain) pops up keychain dialogs from a background job.
 def git-run [args: list<string>] {
-    let result = (^git -c commit.gpgsign=false ...$args | complete)
+    let result = (^git -c commit.gpgsign=false -c credential.helper= ...$args | complete)
     if $result.exit_code != 0 {
         error make { msg: $"dotfiles:sync: git ($args | str join ' ') failed:\n($result.stdout)($result.stderr)" }
     }
@@ -29,7 +31,7 @@ def sync-checkout [] {
         error make { msg: $"dotfiles:sync: cannot inspect staged changes:\n($staged.stderr)" }
     }
 
-    let pull = (^git -c commit.gpgsign=false pull --rebase | complete)
+    let pull = (^git -c commit.gpgsign=false -c credential.helper= pull --rebase | complete)
     if $pull.exit_code != 0 {
         print --stderr ($pull.stdout + $pull.stderr | str trim)
         # Abort only a rebase started by this pull, never another Git operation.

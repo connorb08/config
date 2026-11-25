@@ -667,6 +667,42 @@
 				<string>#ffffff</string>
 			</dict>
 		</dict>
+			<!-- Matches Neovim (lua/plugins/ui.lua) -->
+		<dict>
+			<key>name</key>
+			<string>TOML key</string>
+			<key>scope</key>
+			<string>entity.name.tag.toml</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#32b8c9</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>TOML table header</string>
+			<key>scope</key>
+			<string>source.toml entity.name</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4dafff</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Function keyword</string>
+			<key>scope</key>
+			<string>storage.type.function</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#ff505e</string>
+			</dict>
+		</dict>
 	</array>
 	<key>uuid</key>
 	<string>83091B89-765E-4F0D-9275-0EC6CB084126</string>

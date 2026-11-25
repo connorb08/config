@@ -23,6 +23,23 @@ source = "../../../dotfiles/tmux/tmux.conf"
 mode = "symlink"
 variants = [{ os = "unix" }]
 
+# TPM, tmux's plugin manager; tmux.conf lists the plugins. Not in this repo, so
+# the plugins it downloads stay out of it too.
+[bootstrap.repos]
+"~/.tmux/plugins/tpm" = { url = "https://github.com/tmux-plugins/tpm.git", depth = 1 }
+
+# Installs the plugins tmux.conf lists (TPM's prefix+I, without opening tmux).
+[tasks."setup:tmux"]
+description = "Install the tmux plugins listed in tmux.conf"
+# TPM asks a running tmux server for the plugin list, so reload one first.
+run = """
+if [ ! -x ~/.tmux/plugins/tpm/bin/install_plugins ]; then
+  echo "tmux: TPM not cloned yet; run mise bootstrap --only repos"; exit 0
+fi
+tmux ls >/dev/null 2>&1 && tmux source-file ~/.tmux.conf
+~/.tmux/plugins/tpm/bin/install_plugins
+"""
+
 [bootstrap.packages]
 "brew-cask:wezterm@nightly" = { os = "macos" }
 "scoop:versions/wezterm-nightly" = { os = "windows" }
