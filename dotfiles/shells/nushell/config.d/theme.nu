@@ -21,7 +21,7 @@ $env.config.color_config = {
     float: $one_monokai_darker.purple
     filesize: $one_monokai_darker.cyan
     duration: $one_monokai_darker.cyan
-    datetime: $one_monokai_darker.orange
+    datetime: "#9da5b4"   # quiet, like VS Code's status text; not the theme's parameter orange
     range: $one_monokai_darker.foreground
     string: $one_monokai_darker.foreground
     nothing: $one_monokai_darker.comment
@@ -48,11 +48,11 @@ $env.config.color_config = {
     shape_int: $one_monokai_darker.purple
     shape_float: $one_monokai_darker.purple
     shape_bool: $one_monokai_darker.purple
-    shape_datetime: $one_monokai_darker.orange
+    shape_datetime: $one_monokai_darker.cyan
     shape_filepath: $one_monokai_darker.aqua
     shape_directory: $one_monokai_darker.aqua
     shape_globpattern: $one_monokai_darker.aqua
-    shape_flag: $one_monokai_darker.orange
+    shape_flag: $one_monokai_darker.foreground   # flags in plain text, as in fish
     shape_variable: $one_monokai_darker.aqua
     shape_vardecl: $one_monokai_darker.aqua
     shape_signature: { fg: $one_monokai_darker.green, attr: b }
