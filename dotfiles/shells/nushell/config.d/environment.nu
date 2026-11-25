@@ -27,7 +27,7 @@ if $nu.os-info.name != "windows" {
     $env.MANPAGER = "sh -c 'col -bx | bat --language=man --plain'"
     $env.MANROFFOPT = "-c"
 }
-$env.FZF_DEFAULT_OPTS = "--height=40% --layout=reverse --border --color=fg:#abb2bf,bg:#15181d,hl:#b96aff,fg+:#abb2bf,bg+:#20252e,hl+:#b96aff,info:#f9df6f,prompt:#8fd959,pointer:#ff5a67,marker:#ff5a67,spinner:#f9df6f,header:#656d7a"
+$env.FZF_DEFAULT_OPTS = "--height=40% --layout=reverse --border --color=fg:#abb2bf,bg:#12151a,hl:#b96aff,fg+:#abb2bf,bg+:#1c2128,hl+:#b96aff,info:#f9df6f,prompt:#8fd959,pointer:#ff5a67,marker:#ff5a67,spinner:#f9df6f,header:#636b78"
 $env.BAT_THEME = "One Monokai Darker"
 $env.EZA_CONFIG_DIR = ($nu.home-dir | path join ".config" "eza")
 $env.FZF_DEFAULT_COMMAND = "fd --type f --hidden --follow --exclude .git"

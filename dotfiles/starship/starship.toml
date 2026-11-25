@@ -31,11 +31,11 @@ $character"""
 
 # One Monokai Darker, matching dotfiles/wezterm/theme.lua and tmux.conf.
 [palettes.one_monokai_darker]
-bg_dark = "#101317"
-bg_panel = "#20252e"
-bg_accent = "#252b36"
+bg_dark = "#0e1114"
+bg_panel = "#1c2128"
+bg_accent = "#212630"
 fg = "#abb2bf"
-muted = "#656d7a"
+muted = "#636b78"
 red = "#ff5a67"
 yellow = "#f9df6f"
 green = "#8fd959"
@@ -253,10 +253,10 @@ vimcmd_symbol = "[❮](bold cyan)"
 
 # # Terminal colors plus syntax accents from the One Monokai Darker source theme.
 # [palettes.one_monokai_darker]
-# background = "#15181d"
-# current_line = "#20252e"
+# background = "#12151a"
+# current_line = "#1c2128"
 # foreground = "#abb2bf"
-# comment = "#656d7a"
+# comment = "#636b78"
 # blue = "#5c92ff"
 # aqua = "#57b3ff"
 # cyan = "#25cbe0"

@@ -4,7 +4,7 @@
 # Sourced by zshrc before the plugins load.
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main cursor)
 typeset -gA ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[comment]='fg=#656d7a'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#636b78'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=#8fd959'
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#8fd959'
 ZSH_HIGHLIGHT_STYLES[global-alias]='fg=#8fd959'
@@ -50,4 +50,4 @@ ZSH_HIGHLIGHT_STYLES[redirection]='fg=#abb2bf'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=#abb2bf'
 ZSH_HIGHLIGHT_STYLES[default]='fg=#f9df6f'   # arguments, as in fish and Nushell
 ZSH_HIGHLIGHT_STYLES[cursor]='standout'
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#656d7a'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#636b78'

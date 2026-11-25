@@ -4,16 +4,16 @@ return {
     name = 'One Monokai Darker',
     colors = {
         foreground = '#abb2bf',
-        background = '#15181d',
+        background = '#12151a',
         cursor_bg = '#f8f8f0',
-        cursor_fg = '#15181d',
+        cursor_fg = '#12151a',
         cursor_border = '#f8f8f0',
-        selection_bg = '#252b36',
+        selection_bg = '#212630',
         selection_fg = '#d7dae0',
-        scrollbar_thumb = '#464d5c',
-        split = '#353a41',
+        scrollbar_thumb = '#404755',
+        split = '#31353c',
         ansi = {
-            '#262a30', -- black
+            '#21252a', -- black
             '#ff5a67', -- red
             '#8fd959', -- green
             '#f9df6f', -- yellow
@@ -23,7 +23,7 @@ return {
             '#d7dae0', -- white
         },
         brights = {
-            '#727781', -- black
+            '#696d77', -- black
             '#ff4646', -- red
             '#8fd959', -- green
             '#f9df6f', -- yellow
@@ -33,12 +33,12 @@ return {
             '#d7dae0', -- white
         },
         tab_bar = {
-            background = '#101317',
-            active_tab = { bg_color = '#20252e', fg_color = '#d7dae0' },
-            inactive_tab = { bg_color = '#101317', fg_color = '#8a93a5' },
-            inactive_tab_hover = { bg_color = '#1d2129', fg_color = '#d7dae0' },
-            new_tab = { bg_color = '#101317', fg_color = '#8a93a5' },
-            new_tab_hover = { bg_color = '#1d2129', fg_color = '#d7dae0' },
+            background = '#0e1114',
+            active_tab = { bg_color = '#1c2128', fg_color = '#d7dae0' },
+            inactive_tab = { bg_color = '#0e1114', fg_color = '#7c869a' },
+            inactive_tab_hover = { bg_color = '#1a1d24', fg_color = '#d7dae0' },
+            new_tab = { bg_color = '#0e1114', fg_color = '#7c869a' },
+            new_tab_hover = { bg_color = '#1a1d24', fg_color = '#d7dae0' },
         },
     },
 }

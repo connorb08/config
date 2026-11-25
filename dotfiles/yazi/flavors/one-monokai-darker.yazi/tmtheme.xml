@@ -22,27 +22,27 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#15181d</string>
+				<string>#12151a</string>
 				<key>caret</key>
 				<string>#f8f8f0</string>
 				<key>block_caret</key>
-				<string>#656d7a</string>
+				<string>#636b78</string>
 				<key>foreground</key>
 				<string>#abb2bf</string>
 				<key>invisibles</key>
-				<string>#414348</string>
+				<string>#3c3e42</string>
 				<key>lineHighlight</key>
-				<string>#20252e</string>
+				<string>#1c2128</string>
 				<key>selection</key>
-				<string>#252b36</string>
+				<string>#212630</string>
 				<key>findHighlight</key>
-				<string>#2c3b57</string>
+				<string>#27344d</string>
 				<key>findHighlightForeground</key>
 				<string>#abb2bf</string>
 				<key>selectionBorder</key>
-				<string>#0b0d0f</string>
+				<string>#0a0b0d</string>
 				<key>activeGuide</key>
-				<string>#353a41</string>
+				<string>#31353c</string>
 				<key>bracketsForeground</key>
 				<string>#abb2bf</string>
 				<key>bracketsOptions</key>
@@ -63,7 +63,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#656d7a</string>
+				<string>#636b78</string>
 			</dict>
 		</dict>
 		<dict>
@@ -571,7 +571,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#656d7a</string>
+				<string>#636b78</string>
 			</dict>
 		</dict>
 		<dict>

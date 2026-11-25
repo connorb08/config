@@ -6,10 +6,10 @@ filekinds:
   normal: {foreground: "#abb2bf"}
   directory: {foreground: "#57b3ff"}
   symlink: {foreground: "#b96aff"}
-  pipe: {foreground: "#656d7a"}
+  pipe: {foreground: "#636b78"}
   block_device: {foreground: "#ff5a67"}
   char_device: {foreground: "#ff5a67"}
-  socket: {foreground: "#20252e"}
+  socket: {foreground: "#1c2128"}
   special: {foreground: "#ff5a67"}
   executable: {foreground: "#8fd959"}
   mount_point: {foreground: "#f9df6f"}
@@ -26,7 +26,7 @@ perms:
   other_write: {foreground: "#f9df6f"}
   other_execute: {foreground: "#8fd959"}
   special_user_file: {foreground: "#ff5a67"}
-  special_other: {foreground: "#656d7a"}
+  special_other: {foreground: "#636b78"}
   attribute: {foreground: "#abb2bf"}
 
 size:
@@ -48,7 +48,7 @@ users:
   user_root: {foreground: "#ff5a67"}
   user_other: {foreground: "#ff5a67"}
   group_yours: {foreground: "#abb2bf"}
-  group_other: {foreground: "#656d7a"}
+  group_other: {foreground: "#636b78"}
   group_root: {foreground: "#ff5a67"}
 
 links:
@@ -61,7 +61,7 @@ git:
   deleted: {foreground: "#ff5a67"}
   renamed: {foreground: "#25cbe0"}
   typechange: {foreground: "#ff5a67"}
-  ignored: {foreground: "#656d7a"}
+  ignored: {foreground: "#636b78"}
   conflicted: {foreground: "#ff5a67"}
 
 git_repo:
@@ -71,10 +71,10 @@ git_repo:
   git_dirty: {foreground: "#ff5a67"}
 
 security_context:
-  colon: {foreground: "#656d7a"}
+  colon: {foreground: "#636b78"}
   user: {foreground: "#abb2bf"}
   role: {foreground: "#ff5a67"}
-  typ: {foreground: "#656d7a"}
+  typ: {foreground: "#636b78"}
   range: {foreground: "#ff5a67"}
 
 file_type:
@@ -82,15 +82,15 @@ file_type:
   video: {foreground: "#ff5a67"}
   music: {foreground: "#8fd959"}
   lossless: {foreground: "#8fd959"}
-  crypto: {foreground: "#656d7a"}
+  crypto: {foreground: "#636b78"}
   document: {foreground: "#abb2bf"}
   compressed: {foreground: "#ff5a67"}
   temp: {foreground: "#ff5a67"}
   compiled: {foreground: "#25cbe0"}
-  build: {foreground: "#656d7a"}
+  build: {foreground: "#636b78"}
   source: {foreground: "#25cbe0"}
 
-punctuation: {foreground: "#656d7a"}
+punctuation: {foreground: "#636b78"}
 date: {foreground: "#f9df6f"}
 inode: {foreground: "#abb2bf"}
 blocks: {foreground: "#abb2bf"}
@@ -101,4 +101,4 @@ flags: {foreground: "#ff5a67"}
 symlink_path: {foreground: "#b96aff"}
 control_char: {foreground: "#25cbe0"}
 broken_symlink: {foreground: "#ff5a67"}
-broken_path_overlay: {foreground: "#656d7a"}
+broken_path_overlay: {foreground: "#636b78"}

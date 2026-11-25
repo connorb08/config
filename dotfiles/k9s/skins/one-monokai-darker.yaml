@@ -6,10 +6,10 @@
 
 # Styles...
 foreground: &foreground "#abb2bf"
-background: &background "#15181d"
-current_line: &current_line "#20252e"
-selection: &selection "#252b36"
-comment: &comment "#656d7a"
+background: &background "#12151a"
+current_line: &current_line "#1c2128"
+selection: &selection "#212630"
+comment: &comment "#636b78"
 cyan: &cyan "#25cbe0"
 green: &green "#8fd959"
 orange: &orange "#f59740"
