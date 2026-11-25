@@ -59,7 +59,7 @@
     "terminal.ansiBlack": "#262a30",
     "terminal.ansiBlue": "#6699ff",
     "terminal.ansiGreen": "#97cc70",
-    "terminal.ansiYellow": "#f7e187",
+    "terminal.ansiYellow": "#f9df6f",
     "terminal.ansiCyan": "#40bfcf",
     "terminal.ansiMagenta": "#df75fe",
     "terminal.ansiRed": "#fb598a",
@@ -67,7 +67,7 @@
     "terminal.ansiBrightBlack": "#727781",
     "terminal.ansiBrightBlue": "#6699ff",
     "terminal.ansiBrightGreen": "#97cc70",
-    "terminal.ansiBrightYellow": "#f7e187",
+    "terminal.ansiBrightYellow": "#f9df6f",
     "terminal.ansiBrightCyan": "#40bfcf",
     "terminal.ansiBrightMagenta": "#8f00ab",
     "terminal.ansiBrightRed": "#f55a5a",
@@ -95,7 +95,7 @@
         "string.template"
       ],
       "settings": {
-        "foreground": "#f7e187"
+        "foreground": "#f9df6f"
       }
     },
     {
@@ -397,7 +397,7 @@
         "variable.sass.string"
       ],
       "settings": {
-        "foreground": "#f7e187"
+        "foreground": "#f9df6f"
       }
     },
     {
@@ -489,7 +489,7 @@
       "name": "diff.changed",
       "scope": "markup.changed",
       "settings": {
-        "foreground": "#f7e187"
+        "foreground": "#f9df6f"
       }
     },
     {
@@ -501,7 +501,7 @@
     {
       "scope": "entity.name.filename.find-in-files",
       "settings": {
-        "foreground": "#f7e187"
+        "foreground": "#f9df6f"
       }
     },
     {

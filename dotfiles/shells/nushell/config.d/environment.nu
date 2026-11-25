@@ -19,7 +19,7 @@ $env.BASH_SILENCE_DEPRECATION_WARNING = "1"
 if ($env.COLORTERM? | is-empty) { $env.COLORTERM = "truecolor" }
 # jq output (and yazi's JSON previews, which use jq) in Neovim's colours:
 # null/false/true, numbers, strings, arrays, objects, object keys.
-$env.JQ_COLORS = "0;38;2;64;191;207:0;38;2;64;191;207:0;38;2;64;191;207:0;38;2;223;117;254:0;38;2;247;225;135:0;38;2;171;178;191:0;38;2;171;178;191:0;38;2;64;191;207"
+$env.JQ_COLORS = "0;38;2;64;191;207:0;38;2;64;191;207:0;38;2;64;191;207:0;38;2;223;117;254:0;38;2;249;223;111:0;38;2;171;178;191:0;38;2;171;178;191:0;38;2;64;191;207"
 # $SHELL names the shell that is running, not just the login shell.
 $env.SHELL = $nu.current-exe
 $env.LESS = "-FRX"
@@ -27,7 +27,7 @@ if $nu.os-info.name != "windows" {
     $env.MANPAGER = "sh -c 'col -bx | bat --language=man --plain'"
     $env.MANROFFOPT = "-c"
 }
-$env.FZF_DEFAULT_OPTS = "--height=40% --layout=reverse --border --color=fg:#abb2bf,bg:#15181d,hl:#df75fe,fg+:#abb2bf,bg+:#20252e,hl+:#df75fe,info:#f7e187,prompt:#97cc70,pointer:#fb598a,marker:#fb598a,spinner:#f7e187,header:#656d7a"
+$env.FZF_DEFAULT_OPTS = "--height=40% --layout=reverse --border --color=fg:#abb2bf,bg:#15181d,hl:#df75fe,fg+:#abb2bf,bg+:#20252e,hl+:#df75fe,info:#f9df6f,prompt:#97cc70,pointer:#fb598a,marker:#fb598a,spinner:#f9df6f,header:#656d7a"
 $env.BAT_THEME = "One Monokai Darker"
 $env.EZA_CONFIG_DIR = ($nu.home-dir | path join ".config" "eza")
 $env.FZF_DEFAULT_COMMAND = "fd --type f --hidden --follow --exclude .git"

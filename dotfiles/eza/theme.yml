@@ -12,25 +12,25 @@ filekinds:
   socket: {foreground: "#20252e"}
   special: {foreground: "#fb598a"}
   executable: {foreground: "#97cc70"}
-  mount_point: {foreground: "#f7e187"}
+  mount_point: {foreground: "#f9df6f"}
 
 perms:
   user_read: {foreground: "#abb2bf"}
-  user_write: {foreground: "#f7e187"}
+  user_write: {foreground: "#f9df6f"}
   user_execute_file: {foreground: "#97cc70"}
   user_execute_other: {foreground: "#97cc70"}
   group_read: {foreground: "#abb2bf"}
-  group_write: {foreground: "#f7e187"}
+  group_write: {foreground: "#f9df6f"}
   group_execute: {foreground: "#97cc70"}
   other_read: {foreground: "#abb2bf"}
-  other_write: {foreground: "#f7e187"}
+  other_write: {foreground: "#f9df6f"}
   other_execute: {foreground: "#97cc70"}
   special_user_file: {foreground: "#fb598a"}
   special_other: {foreground: "#656d7a"}
   attribute: {foreground: "#abb2bf"}
 
 size:
-  major: {foreground: "#f7e187"}
+  major: {foreground: "#f9df6f"}
   minor: {foreground: "#df75fe"}
   number_byte: {foreground: "#abb2bf"}
   number_kilo: {foreground: "#abb2bf"}
@@ -41,7 +41,7 @@ size:
   unit_kilo: {foreground: "#40bfcf"}
   unit_mega: {foreground: "#fb598a"}
   unit_giga: {foreground: "#fb598a"}
-  unit_huge: {foreground: "#f7e187"}
+  unit_huge: {foreground: "#f9df6f"}
 
 users:
   user_you: {foreground: "#abb2bf"}
@@ -53,11 +53,11 @@ users:
 
 links:
   normal: {foreground: "#df75fe"}
-  multi_link_file: {foreground: "#f7e187"}
+  multi_link_file: {foreground: "#f9df6f"}
 
 git:
   new: {foreground: "#97cc70"}
-  modified: {foreground: "#f7e187"}
+  modified: {foreground: "#f9df6f"}
   deleted: {foreground: "#fb598a"}
   renamed: {foreground: "#40bfcf"}
   typechange: {foreground: "#fb598a"}
@@ -78,7 +78,7 @@ security_context:
   range: {foreground: "#fb598a"}
 
 file_type:
-  image: {foreground: "#f7e187"}
+  image: {foreground: "#f9df6f"}
   video: {foreground: "#fb598a"}
   music: {foreground: "#97cc70"}
   lossless: {foreground: "#97cc70"}
@@ -91,7 +91,7 @@ file_type:
   source: {foreground: "#40bfcf"}
 
 punctuation: {foreground: "#656d7a"}
-date: {foreground: "#f7e187"}
+date: {foreground: "#f9df6f"}
 inode: {foreground: "#abb2bf"}
 blocks: {foreground: "#abb2bf"}
 header: {foreground: "#abb2bf"}

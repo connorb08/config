@@ -16,7 +16,7 @@ return {
             '#262a30', -- black
             '#fb598a', -- red
             '#97cc70', -- green
-            '#f7e187', -- yellow
+            '#f9df6f', -- yellow
             '#6699ff', -- blue
             '#df75fe', -- magenta
             '#40bfcf', -- cyan
@@ -26,7 +26,7 @@ return {
             '#727781', -- black
             '#f55a5a', -- red
             '#97cc70', -- green
-            '#f7e187', -- yellow
+            '#f9df6f', -- yellow
             '#6699ff', -- blue
             '#8f00ab', -- magenta
             '#40bfcf', -- cyan
