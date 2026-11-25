@@ -36,8 +36,8 @@ $env.config.menus = ($env.config.menus | where name != completion_menu | append 
         text: "#abb2bf"
         selected_text: { fg: "#d7dae0", bg: "#2c3340", attr: b }
         description_text: "#676f7d"
-        match_text: { fg: "#f1bd5b", attr: u }
-        selected_match_text: { fg: "#f1bd5b", bg: "#2c3340", attr: bu }
+        match_text: { fg: "#f5d273", attr: u }
+        selected_match_text: { fg: "#f5d273", bg: "#2c3340", attr: bu }
     }
 })
 

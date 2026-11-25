@@ -16,7 +16,7 @@ orange: &orange "#e49346"
 pink: &pink "#ff505e"
 purple: &purple "#da61fe"
 red: &red "#ff505e"
-yellow: &yellow "#f1bd5b"
+yellow: &yellow "#f5d273"
 
 # Skin...
 k9s:

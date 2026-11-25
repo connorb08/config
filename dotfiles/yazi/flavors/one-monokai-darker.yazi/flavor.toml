@@ -12,19 +12,19 @@
 cwd = { fg = "#4dafff" }
 
 # Find
-find_keyword  = { fg = "#f1bd5b", bold = true, italic = true, underline = true }
+find_keyword  = { fg = "#f5d273", bold = true, italic = true, underline = true }
 find_position = { fg = "#ff505e", bg = "reset", bold = true, italic = true }
 
 # Marker
 marker_copied   = { fg = "#8cc761", bg = "#8cc761" }
 marker_cut      = { fg = "#ff505e", bg = "#ff505e" }
 marker_marked   = { fg = "#32b8c9", bg = "#32b8c9" }
-marker_selected = { fg = "#f1bd5b", bg = "#f1bd5b" }
+marker_selected = { fg = "#f5d273", bg = "#f5d273" }
 
 # Count
 count_copied   = { fg = "#191c22", bg = "#8cc761" }
 count_cut      = { fg = "#191c22", bg = "#ff505e" }
-count_selected = { fg = "#191c22", bg = "#f1bd5b" }
+count_selected = { fg = "#191c22", bg = "#f5d273" }
 
 # Border
 border_symbol = "│"
@@ -54,8 +54,8 @@ select_main = { fg = "#191c22", bg = "#32b8c9", bold = true }
 select_alt  = { fg = "#32b8c9", bg = "#262c36" }
 
 # Unset mode
-unset_main = { fg = "#191c22", bg = "#f1bd5b", bold = true }
-unset_alt  = { fg = "#f1bd5b", bg = "#262c36" }
+unset_main = { fg = "#191c22", bg = "#f5d273", bold = true }
+unset_alt  = { fg = "#f5d273", bg = "#262c36" }
 
 # : }}}
 
@@ -66,14 +66,14 @@ unset_alt  = { fg = "#f1bd5b", bg = "#262c36" }
 # Permissions
 perm_sep   = { fg = "#676f7d" }
 perm_type  = { fg = "#32b8c9" }
-perm_read  = { fg = "#f1bd5b" }
+perm_read  = { fg = "#f5d273" }
 perm_write = { fg = "#ff505e" }
 perm_exec  = { fg = "#8cc761" }
 
 # Progress
 progress_label  = { fg = "#d7dae0", bold = true }
 progress_normal = { fg = "#8cc761", bg = "#4e5666" }
-progress_error  = { fg = "#f1bd5b", bg = "#ff505e" }
+progress_error  = { fg = "#f5d273", bg = "#ff505e" }
 
 # : }}}
 
@@ -157,7 +157,7 @@ tbl_cell = { fg = "#ff505e", bg = "#4e5666" }
 
 [notify]
 title_info  = { fg = "#8cc761" }
-title_warn  = { fg = "#f1bd5b" }
+title_warn  = { fg = "#f5d273" }
 title_error = { fg = "#ff505e" }
 
 # : }}}
@@ -171,7 +171,7 @@ rules = [
 	# Image
 	{ mime = "**/image/*", fg = "#32b8c9" },
 	# Media
-	{ mime = "**/{audio,video}/*", fg = "#f1bd5b" },
+	{ mime = "**/{audio,video}/*", fg = "#f5d273" },
 	# Archive
 	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#ff505e" },
 	# Document
@@ -207,11 +207,11 @@ conds = [
 	# Special files
 	{ if = "orphan", text = "", fg = "#abb2bf" },
 	{ if = "link", text = "", fg = "#7f848e" },
-	{ if = "block", text = "", fg = "#f1bd5b" },
-	{ if = "char", text = "", fg = "#f1bd5b" },
-	{ if = "fifo", text = "", fg = "#f1bd5b" },
-	{ if = "sock", text = "", fg = "#f1bd5b" },
-	{ if = "sticky", text = "", fg = "#f1bd5b" },
+	{ if = "block", text = "", fg = "#f5d273" },
+	{ if = "char", text = "", fg = "#f5d273" },
+	{ if = "fifo", text = "", fg = "#f5d273" },
+	{ if = "sock", text = "", fg = "#f5d273" },
+	{ if = "sticky", text = "", fg = "#f5d273" },
 	{ if = "dummy", text = "", fg = "#ff505e" },
 
 	# Fallback

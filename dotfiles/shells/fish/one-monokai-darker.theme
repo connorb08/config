@@ -3,13 +3,13 @@
 fish_color_normal abb2bf
 fish_color_command 8cc761
 fish_color_keyword ff505e
-fish_color_quote f1bd5b
+fish_color_quote f5d273
 fish_color_redirection da61fe
 fish_color_end ff505e
 fish_color_error ff505e
 # Arguments in the theme's yellow (as in Nushell and zsh), not its orange (#e49346),
 # which is for function parameters in code.
-fish_color_param f1bd5b
+fish_color_param f5d273
 fish_color_comment 676f7d
 fish_color_operator ff505e
 fish_color_escape da61fe
