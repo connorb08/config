@@ -3,17 +3,29 @@ local wezterm = require 'wezterm'
 
 local MIN_TAB_WIDTH = 6
 
--- This tab's share of the row: the window's width in cells split evenly
--- between the tabs; the first few take the leftover cells so the row is filled
--- exactly.
-local function share_of_row(tab, tab_count, fallback)
-    local ok, size = pcall(function()
-        return wezterm.mux.get_tab(tab.tab_id):get_size()
+-- How many cells the tab bar spans. It runs the full width of the window,
+-- while the terminal area is narrower by the window padding, so measure the
+-- window in pixels and divide by a cell's width (from the terminal area).
+local function tab_bar_cells(tab)
+    local mux_tab = wezterm.mux.get_tab(tab.tab_id)
+    local size = mux_tab:get_size()
+    local cols = size.cols
+    local ok, dims = pcall(function()
+        return mux_tab:window():gui_window():get_dimensions()
     end)
-    if not ok or not size or not size.cols then
+    if ok and dims and dims.pixel_width and (size.pixel_width or 0) > 0 then
+        cols = math.floor(dims.pixel_width / (size.pixel_width / size.cols))
+    end
+    return cols
+end
+
+-- This tab's share of the row, split evenly between the tabs; the first few
+-- take the leftover cells so the row is filled exactly.
+local function share_of_row(tab, tab_count, fallback)
+    local ok, row = pcall(tab_bar_cells, tab)
+    if not ok or not row then
         return fallback
     end
-    local row = size.cols
     local width = math.floor(row / tab_count)
     if tab.tab_index < row % tab_count then
         width = width + 1
