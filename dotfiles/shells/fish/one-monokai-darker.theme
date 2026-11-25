@@ -2,22 +2,22 @@
 # One Monokai Darker, matching WezTerm and Starship.
 fish_color_normal abb2bf
 fish_color_command 8fd959
-fish_color_keyword ff4b81
+fish_color_keyword ff5a67
 fish_color_quote f9df6f
-fish_color_redirection dd6aff
-fish_color_end ff4b81
-fish_color_error ff4b81
+fish_color_redirection b96aff
+fish_color_end ff5a67
+fish_color_error ff5a67
 # Arguments in the theme's yellow (as in Nushell and zsh), not its orange (#f59740),
 # which is for function parameters in code.
 fish_color_param f9df6f
 fish_color_comment 656d7a
-fish_color_operator ff4b81
-fish_color_escape dd6aff
+fish_color_operator ff5a67
+fish_color_escape b96aff
 fish_color_autosuggestion 656d7a
 fish_color_selection d7dae0 --background=252b36
 fish_color_search_match abb2bf --background=2c3b57
 fish_color_valid_path --underline
-fish_color_cancel ff4b81 --reverse
+fish_color_cancel ff5a67 --reverse
 fish_color_history_current --bold
 fish_pager_color_progress 656d7a
 fish_pager_color_prefix 25cbe0 --bold

@@ -61,8 +61,8 @@
     "terminal.ansiGreen": "#8fd959",
     "terminal.ansiYellow": "#f9df6f",
     "terminal.ansiCyan": "#25cbe0",
-    "terminal.ansiMagenta": "#dd6aff",
-    "terminal.ansiRed": "#ff4b81",
+    "terminal.ansiMagenta": "#b96aff",
+    "terminal.ansiRed": "#ff5a67",
     "terminal.ansiWhite": "#d7dae0",
     "terminal.ansiBrightBlack": "#727781",
     "terminal.ansiBrightBlue": "#5c92ff",
@@ -102,7 +102,7 @@
       "name": "Number",
       "scope": "constant.numeric",
       "settings": {
-        "foreground": "#dd6aff"
+        "foreground": "#b96aff"
       }
     },
     {
@@ -114,7 +114,7 @@
         "punctuation.section.embedded"
       ],
       "settings": {
-        "foreground": "#dd6aff"
+        "foreground": "#b96aff"
       }
     },
     {
@@ -154,7 +154,7 @@
       "name": "Language Variable",
       "scope": "variable.language",
       "settings": {
-        "foreground": "#ff4b81"
+        "foreground": "#ff5a67"
       }
     },
     {
@@ -165,21 +165,21 @@
         "keyword.operator.constructor"
       ],
       "settings": {
-        "foreground": "#ff4b81"
+        "foreground": "#ff5a67"
       }
     },
     {
       "name": "Keyword Operator",
       "scope": "keyword.operator",
       "settings": {
-        "foreground": "#ff4b81"
+        "foreground": "#ff5a67"
       }
     },
     {
       "name": "Storage",
       "scope": "storage",
       "settings": {
-        "foreground": "#ff4b81"
+        "foreground": "#ff5a67"
       }
     },
     {
@@ -292,7 +292,7 @@
         "entity.name.tag.class.js"
       ],
       "settings": {
-        "foreground": "#ff4b81"
+        "foreground": "#ff5a67"
       }
     },
     {
@@ -409,7 +409,7 @@
         "unit.sass"
       ],
       "settings": {
-        "foreground": "#dd6aff"
+        "foreground": "#b96aff"
       }
     },
     {
@@ -475,7 +475,7 @@
       "name": "diff.deleted",
       "scope": "markup.deleted",
       "settings": {
-        "foreground": "#ff4b81"
+        "foreground": "#ff5a67"
       }
     },
     {
@@ -548,7 +548,7 @@
       "scope": "markup.heading.markdown",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#ff4b81"
+        "foreground": "#ff5a67"
       }
     },
     {
@@ -562,7 +562,7 @@
       "name": "Markup: Separator",
       "scope": "meta.separator.markdown",
       "settings": {
-        "foreground": "#dd6aff",
+        "foreground": "#b96aff",
         "fontStyle": "bold"
       }
     },

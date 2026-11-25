@@ -85,7 +85,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#dd6aff</string>
+				<string>#b96aff</string>
 			</dict>
 		</dict>
 		<dict>
@@ -96,7 +96,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#dd6aff</string>
+				<string>#b96aff</string>
 			</dict>
 		</dict>
 		<dict>
@@ -140,7 +140,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff4b81</string>
+				<string>#ff5a67</string>
 			</dict>
 		</dict>
 		<dict>
@@ -151,7 +151,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff4b81</string>
+				<string>#ff5a67</string>
 			</dict>
 		</dict>
 		<dict>
@@ -162,7 +162,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff4b81</string>
+				<string>#ff5a67</string>
 			</dict>
 		</dict>
 		<dict>
@@ -173,7 +173,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff4b81</string>
+				<string>#ff5a67</string>
 			</dict>
 		</dict>
 		<dict>
@@ -296,7 +296,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff4b81</string>
+				<string>#ff5a67</string>
 			</dict>
 		</dict>
 		<dict>
@@ -417,7 +417,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#dd6aff</string>
+				<string>#b96aff</string>
 			</dict>
 		</dict>
 		<dict>
@@ -509,7 +509,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff4b81</string>
+				<string>#ff5a67</string>
 			</dict>
 		</dict>
 		<dict>
@@ -617,7 +617,7 @@
 				<key>fontStyle</key>
 				<string>bold</string>
 				<key>foreground</key>
-				<string>#ff4b81</string>
+				<string>#ff5a67</string>
 			</dict>
 		</dict>
 		<dict>
@@ -639,7 +639,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#dd6aff</string>
+				<string>#b96aff</string>
 				<key>fontStyle</key>
 				<string>bold</string>
 			</dict>
@@ -712,7 +712,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ff4b81</string>
+				<string>#ff5a67</string>
 			</dict>
 		</dict>
 	</array>

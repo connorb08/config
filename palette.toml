@@ -35,7 +35,7 @@ cursor     = "#f8f8f0"   # editorCursor.foreground
 white      = "#ffffff"
 
 # ---- syntax and terminal colours
-red         = "#ff4b81"  # keywords, storage, tags
+red         = "#ff5a67"  # keywords, storage, tags
 red_bright  = "#ff4646"  # ansiBrightRed
 red_dark    = "#d9352a"  # editorError.foreground
 orange      = "#f59740"  # function parameters
@@ -44,7 +44,7 @@ green       = "#8fd959"  # functions, inherited classes
 cyan        = "#25cbe0"  # types, constants, JSON keys
 blue        = "#57b3ff"  # classes, variables, links
 blue_ansi   = "#5c92ff"  # ansiBlue, badges and buttons
-purple      = "#dd6aff"  # numbers, ansiMagenta
+purple      = "#b96aff"  # numbers, ansiMagenta
 purple_dark = "#8600a1"  # ansiBrightMagenta
 
 # ---- VS Code only (one-monokai-darker.json UI)

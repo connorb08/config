@@ -2,8 +2,8 @@
 # ---- colours: One Monokai Darker, matching WezTerm and Starship
 let one_monokai_darker = {
     background: "#15181d", current_line: "#20252e", foreground: "#abb2bf", comment: "#656d7a"
-    cyan: "#25cbe0", green: "#8fd959", orange: "#f59740", pink: "#ff4b81", aqua: "#57b3ff"
-    purple: "#dd6aff", red: "#ff4b81", yellow: "#f9df6f"
+    cyan: "#25cbe0", green: "#8fd959", orange: "#f59740", pink: "#ff5a67", aqua: "#57b3ff"
+    purple: "#b96aff", red: "#ff5a67", yellow: "#f9df6f"
     invalid: "#c678dd", invalid_text: "#f8f8f0"
     search: "#2c3b57"
 }

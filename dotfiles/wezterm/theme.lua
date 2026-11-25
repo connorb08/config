@@ -14,11 +14,11 @@ return {
         split = '#353a41',
         ansi = {
             '#262a30', -- black
-            '#ff4b81', -- red
+            '#ff5a67', -- red
             '#8fd959', -- green
             '#f9df6f', -- yellow
             '#5c92ff', -- blue
-            '#dd6aff', -- magenta
+            '#b96aff', -- magenta
             '#25cbe0', -- cyan
             '#d7dae0', -- white
         },

@@ -13,17 +13,17 @@ cwd = { fg = "#57b3ff" }
 
 # Find
 find_keyword  = { fg = "#f9df6f", bold = true, italic = true, underline = true }
-find_position = { fg = "#ff4b81", bg = "reset", bold = true, italic = true }
+find_position = { fg = "#ff5a67", bg = "reset", bold = true, italic = true }
 
 # Marker
 marker_copied   = { fg = "#8fd959", bg = "#8fd959" }
-marker_cut      = { fg = "#ff4b81", bg = "#ff4b81" }
+marker_cut      = { fg = "#ff5a67", bg = "#ff5a67" }
 marker_marked   = { fg = "#25cbe0", bg = "#25cbe0" }
 marker_selected = { fg = "#f9df6f", bg = "#f9df6f" }
 
 # Count
 count_copied   = { fg = "#15181d", bg = "#8fd959" }
-count_cut      = { fg = "#15181d", bg = "#ff4b81" }
+count_cut      = { fg = "#15181d", bg = "#ff5a67" }
 count_selected = { fg = "#15181d", bg = "#f9df6f" }
 
 # Border
@@ -67,13 +67,13 @@ unset_alt  = { fg = "#f9df6f", bg = "#20252e" }
 perm_sep   = { fg = "#656d7a" }
 perm_type  = { fg = "#25cbe0" }
 perm_read  = { fg = "#f9df6f" }
-perm_write = { fg = "#ff4b81" }
+perm_write = { fg = "#ff5a67" }
 perm_exec  = { fg = "#8fd959" }
 
 # Progress
 progress_label  = { fg = "#d7dae0", bold = true }
 progress_normal = { fg = "#8fd959", bg = "#464d5c" }
-progress_error  = { fg = "#f9df6f", bg = "#ff4b81" }
+progress_error  = { fg = "#f9df6f", bg = "#ff5a67" }
 
 # : }}}
 
@@ -82,7 +82,7 @@ progress_error  = { fg = "#f9df6f", bg = "#ff4b81" }
 
 [pick]
 border   = { fg = "#464d5c" }
-active   = { fg = "#ff4b81", bold = true }
+active   = { fg = "#ff5a67", bold = true }
 inactive = {}
 
 # : }}}
@@ -113,7 +113,7 @@ border = { fg = "#464d5c" }
 [tasks]
 border  = { fg = "#464d5c" }
 title   = {}
-hovered = { fg = "#ff4b81", bold = true }
+hovered = { fg = "#ff5a67", bold = true }
 
 # : }}}
 
@@ -124,7 +124,7 @@ hovered = { fg = "#ff4b81", bold = true }
 border          = { fg = "#464d5c" }
 cand            = { fg = "#25cbe0" }
 rest            = { fg = "#8a93a5" }
-desc            = { fg = "#ff4b81" }
+desc            = { fg = "#ff5a67" }
 separator       = "  "
 separator_style = { fg = "#656d7a" }
 
@@ -135,7 +135,7 @@ separator_style = { fg = "#656d7a" }
 
 [help]
 on      = { fg = "#25cbe0" }
-run     = { fg = "#ff4b81" }
+run     = { fg = "#ff5a67" }
 hovered = { reversed = true, bold = true }
 footer  = { fg = "#20252e", bg = "#abb2bf" }
 
@@ -148,7 +148,7 @@ footer  = { fg = "#20252e", bg = "#abb2bf" }
 border   = { fg = "#464d5c" }
 title    = { fg = "#abb2bf" }
 tbl_col  = { fg = "#25cbe0" }
-tbl_cell = { fg = "#ff4b81", bg = "#464d5c" }
+tbl_cell = { fg = "#ff5a67", bg = "#464d5c" }
 
 # : }}}
 
@@ -158,7 +158,7 @@ tbl_cell = { fg = "#ff4b81", bg = "#464d5c" }
 [notify]
 title_info  = { fg = "#8fd959" }
 title_warn  = { fg = "#f9df6f" }
-title_error = { fg = "#ff4b81" }
+title_error = { fg = "#ff5a67" }
 
 # : }}}
 
@@ -173,7 +173,7 @@ rules = [
 	# Media
 	{ mime = "**/{audio,video}/*", fg = "#f9df6f" },
 	# Archive
-	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#ff4b81" },
+	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#ff5a67" },
 	# Document
 	{ mime = "**/application/{pdf,doc,rtf}", fg = "#8fd959" },
 	# Virtual file system
@@ -188,10 +188,10 @@ rules = [
 [icon]
 
 dirs = [
-	{ name = ".config", text = "", fg = "#ff4b81" },
+	{ name = ".config", text = "", fg = "#ff5a67" },
 	{ name = ".git", text = "", fg = "#57b3ff" },
-	{ name = ".github", text = "", fg = "#dd6aff" },
-	{ name = ".npm", text = "", fg = "#ff4b81" },
+	{ name = ".github", text = "", fg = "#b96aff" },
+	{ name = ".npm", text = "", fg = "#ff5a67" },
 	{ name = "Desktop", text = "", fg = "#57b3ff" },
 	{ name = "Development", text = "", fg = "#57b3ff" },
 	{ name = "Documents", text = "", fg = "#57b3ff" },
@@ -212,7 +212,7 @@ conds = [
 	{ if = "fifo", text = "", fg = "#f9df6f" },
 	{ if = "sock", text = "", fg = "#f9df6f" },
 	{ if = "sticky", text = "", fg = "#f9df6f" },
-	{ if = "dummy", text = "", fg = "#ff4b81" },
+	{ if = "dummy", text = "", fg = "#ff5a67" },
 
 	# Fallback
 	{ if = "dir & hovered", text = "", fg = "#57b3ff" },

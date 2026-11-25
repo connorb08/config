@@ -13,9 +13,9 @@ comment: &comment "#656d7a"
 cyan: &cyan "#25cbe0"
 green: &green "#8fd959"
 orange: &orange "#f59740"
-pink: &pink "#ff4b81"
-purple: &purple "#dd6aff"
-red: &red "#ff4b81"
+pink: &pink "#ff5a67"
+purple: &purple "#b96aff"
+red: &red "#ff5a67"
 yellow: &yellow "#f9df6f"
 
 # Skin...
