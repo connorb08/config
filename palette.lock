@@ -13,6 +13,7 @@
   "dotfiles/shells/zsh/config.d/one-monokai-darker.zsh": "e680601e23e3eeb5b287c65319d77bc6106f19ba1661c16db4af70a77122306f",
   "dotfiles/starship/starship.toml": "eed00b7557200b80503f5fffb1ffc251af6d05035226dac404c50a1b500fcfab",
   "dotfiles/tmux/tmux.conf": "b261b278c813ac2048cfeaf0c00b73080de702db8781846c0a0208eda4fec779",
+  "dotfiles/vscode/one-monokai-darker/one-monokai-darker.json": "bea7d13dadd50ea62a6404d3ad955b60f48be32ac0b39b69453ce81603084975",
   "dotfiles/wezterm/theme.lua": "7de5af8de4232b47871b8670eec56f1243cdf519ebb7b1a025e0d376ab8049b2",
   "dotfiles/yazi/flavors/one-monokai-darker.yazi/flavor.toml": "4fc0507fa07fc61c6eca2383043a1a8820a8677c6b7e03c139769cadd39929d2",
   "dotfiles/yazi/flavors/one-monokai-darker.yazi/tmtheme.xml": "4b017165b648e556a23921fc6b22867dd3430fef5e0cf85a476baf54876caa3b"

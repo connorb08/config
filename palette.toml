@@ -7,8 +7,8 @@
 # scripts/palette.nu renders them into the real files under dotfiles/. Change a
 # colour here and run `mise run palette`; the dotfiles sync does it too.
 #
-# Values come from the VS Code theme (connorb08/themes, one-monokai-darker.json);
-# the setting each one is used for there is noted.
+# The VS Code theme is generated from these too (dotfiles/vscode); the setting
+# each colour is used for there is noted.
 
 [colors]
 # ---- backgrounds, darkest to lightest
@@ -46,6 +46,20 @@ blue        = "#4dafff"  # classes, variables, links
 blue_ansi   = "#528bff"  # ansiBlue, badges and buttons
 purple      = "#da61fe"  # numbers, ansiMagenta
 purple_dark = "#7e0097"  # ansiBrightMagenta
+
+# ---- VS Code only (one-monokai-darker.json UI)
+bg_input         = "#101216"  # dropdown.background, input.background
+bg_activity      = "#1c2028"  # activityBar.background, debugToolBar
+list_hover       = "#1e222a"  # list.hoverBackground
+search_other     = "#25334f"  # editor.findMatchHighlightBackground
+ruler            = "#484848"  # editorRuler.foreground
+scrollbar_hover  = "#5a6375"  # scrollbarSlider.hoverBackground
+scrollbar_active = "#747d91"  # scrollbarSlider.activeBackground
+title_inactive   = "#6b717d"  # titleBar.inactiveForeground
+list_highlight   = "#c5c5c5"  # list.highlightForeground
+badge_fg         = "#f8fafd"  # activityBarBadge.foreground
+teal             = "#00809b"  # diffEditor.insertedTextBackground (with alpha)
+true_black       = "#000000"  # editorUnnecessaryCode.opacity (with alpha)
 
 # ---- from the theme's legacy token rules
 invalid            = "#c678dd"

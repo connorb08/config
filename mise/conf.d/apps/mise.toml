@@ -14,6 +14,12 @@ variants = [
 description = "Install the Neovim plugins pinned in lazy-lock.json"
 run = 'nvim --headless "+Lazy! restore" +qa'
 
+# VS Code's colour theme, as an extension folder. Its theme JSON is generated
+# from palette.toml (templates/dotfiles/vscode/...), like every other tool's colours.
+[dotfiles."~/.vscode/extensions/one-monokai-darker"]
+source = "../../../dotfiles/vscode/one-monokai-darker"
+mode = "symlink"
+
 [dotfiles."~/.config/wezterm"]
 source = "../../../dotfiles/wezterm"
 mode = "symlink"

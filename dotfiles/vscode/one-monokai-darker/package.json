@@ -1,0 +1,17 @@
+{
+  "name": "one-monokai-darker",
+  "displayName": "One Monokai Darker",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "One Monokai Darker",
+        "uiTheme": "vs-dark",
+        "path": "./one-monokai-darker.json"
+      }
+    ]
+  }
+}
