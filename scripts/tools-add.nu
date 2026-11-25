@@ -1,7 +1,7 @@
 # Add a tool to tools.toml (the shared, synced tool list), pinned to a version,
 # then lock it, refresh the global mise config copy, and install it.
 #
-#   nu scripts/tools-add.nu <repo> <tool> [version] [--dry-run]
+#   nu scripts/tools-add.nu <repo> <tool> [version] [--dry-run | -n]
 #
 # <tool> is anything `mise use` takes: ripgrep, aqua:owner/repo, npm:prettier, ...
 # Without a version, the latest one is pinned. An existing entry is updated in
@@ -51,7 +51,7 @@ def --wrapped run-mise [repo: path ...args: string] {
     $result.stdout | str trim
 }
 
-def main [repo: path tool: string version?: string --dry-run] {
+def main [repo: path tool: string version?: string --dry-run (-n)] {
     let repo = ($repo | path expand)
     if ($tool !~ '^[A-Za-z0-9_.:/@+-]+$') or ($tool | str contains "@") {
         error make { msg: $"'($tool)' is not a tool name; give the version as a second argument: tools:add ripgrep 16.0.0" }

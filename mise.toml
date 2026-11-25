@@ -67,6 +67,12 @@ flag "-n --dry-run" help="Show what would be pinned without changing anything"
 '''
 run = 'nu --no-config-file "{{ config_root }}/scripts/tools-add.nu" "{{ config_root }}" "{{ usage.tool }}" "{{ usage.version | default(value="") }}" {% if usage.dry_run %}--dry-run{% endif %}'
 
+# The same task, global: works from any directory (mise run tools:add ...).
+[dotfiles."mise-task-tools-add"]
+source = "scripts/mise-task-tools-add.sh"
+mode = "symlink"
+variants = [{ os = "unix", target = "~/.config/mise/tasks/tools/add" }]
+
 # ---------------------------------------------------------------- colours
 
 # Every tool's colours come from palette.toml through the templates under
