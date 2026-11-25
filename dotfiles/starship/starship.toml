@@ -37,19 +37,20 @@ red = "#ff505e"
 yellow = "#f1bd5b"
 green = "#8cc761"
 cyan = "#32b8c9"
+blue = "#4dafff"   # the theme's class/type colour, used for locations
 purple = "#da61fe"
 orange = "#e49346"
 
 
 [directory]
-style = "bold cyan bg:bg_panel"
+style = "bold blue bg:bg_panel"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bold purple bg:bg_accent"
+style = "bold green bg:bg_accent"
 format = "[ $branch ]($style)"
 
 [git_status]
@@ -81,7 +82,7 @@ format = "[$duration]($style)"
 [shell]
 disabled = false
 format = "[ ](bg:bg_panel)$indicator[ ](fg:muted bg:bg_panel)"
-fish_indicator = "[󰈺 fish](bold cyan bg:bg_panel)"
+fish_indicator = "[󰈺 fish](bold blue bg:bg_panel)"
 nu_indicator = "[ nu](bold green bg:bg_panel)"
 zsh_indicator = "[ zsh](bold purple bg:bg_panel)"
 bash_indicator = "[ bash](bold orange bg:bg_panel)"

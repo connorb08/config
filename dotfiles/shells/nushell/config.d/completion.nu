@@ -9,7 +9,8 @@ $env.config.completions.quick = true
 $env.config.highlight_resolved_externals = true
 
 # Completion menu as a list with each candidate's description beside it
-# (carapace supplies them for flags and subcommands), in One Monokai Darker.
+# (carapace supplies them for flags and subcommands), styled like VS Code's
+# suggestion list in One Monokai Darker.
 # Tab / Shift-Tab move through it, Enter accepts, Esc closes.
 $env.config.menus = ($env.config.menus | where name != completion_menu | append {
     name: completion_menu
@@ -32,9 +33,9 @@ $env.config.menus = ($env.config.menus | where name != completion_menu | append 
     }
     style: {
         text: "#abb2bf"
-        selected_text: { fg: "#191c22", bg: "#32b8c9", attr: b }
+        selected_text: { fg: "#d7dae0", bg: "#2c3340", attr: b }
         description_text: "#676f7d"
         match_text: { fg: "#f1bd5b", attr: u }
-        selected_match_text: { fg: "#191c22", bg: "#32b8c9", attr: bu }
+        selected_match_text: { fg: "#f1bd5b", bg: "#2c3340", attr: bu }
     }
 })

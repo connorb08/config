@@ -46,6 +46,10 @@ local mac_keys = {
     -- Delete entire line to the right of cursor (Cmd + Delete/Fn+Backspace)
     { key = 'Delete',     mods = 'CMD',         action = act.SendKey { key = 'k', mods = 'CTRL' } },
     { key = 'X',          mods = 'CMD|SHIFT',   action = act.ActivateCopyMode },
+
+    -- tmux prefix (Cmd + b). Terminals never pass Cmd through, so send the
+    -- Ctrl-b prefix tmux already uses; Ctrl-b itself keeps working.
+    { key = 'b',          mods = 'CMD',         action = act.SendKey { key = 'b', mods = 'CTRL' } },
 }
 -- for i = 1, 9 do
 --     table.insert(mac_keys, { key = tostring(i), mods = 'SUPER', action = off })

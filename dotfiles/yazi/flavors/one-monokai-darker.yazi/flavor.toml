@@ -1,10 +1,14 @@
 # One Monokai Darker, adapted from yazi-rs/flavors (MIT).
+# UI greys as in the VS Code theme (active tab #262c36, selection #2c3340);
+# blue (#4dafff, the theme's class colour) for directories, as in eza;
+# cyan marks select mode and state.
+# Purple is kept to a single folder icon.
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # : Manager {{{
 
 [mgr]
-cwd = { fg = "#32b8c9" }
+cwd = { fg = "#4dafff" }
 
 # Find
 find_keyword  = { fg = "#f1bd5b", bold = true, italic = true, underline = true }
@@ -31,8 +35,8 @@ border_style  = { fg = "#676f7d" }
 # : Tabs {{{
 
 [tabs]
-active   = { fg = "#191c22", bg = "#da61fe", bold = true }
-inactive = { fg = "#da61fe", bg = "#262c36" }
+active   = { fg = "#d7dae0", bg = "#262c36", bold = true }
+inactive = { fg = "#9da5b4", bg = "#13161b" }
 
 # : }}}
 
@@ -41,8 +45,8 @@ inactive = { fg = "#da61fe", bg = "#262c36" }
 
 [mode]
 
-normal_main = { fg = "#191c22", bg = "#da61fe", bold = true }
-normal_alt  = { fg = "#da61fe", bg = "#262c36" }
+normal_main = { fg = "#d7dae0", bg = "#2c3340", bold = true }
+normal_alt  = { fg = "#9da5b4", bg = "#262c36" }
 
 # Select mode
 select_main = { fg = "#191c22", bg = "#32b8c9", bold = true }
@@ -60,7 +64,7 @@ unset_alt  = { fg = "#f1bd5b", bg = "#262c36" }
 [status]
 # Permissions
 perm_sep   = { fg = "#676f7d" }
-perm_type  = { fg = "#da61fe" }
+perm_type  = { fg = "#32b8c9" }
 perm_read  = { fg = "#f1bd5b" }
 perm_write = { fg = "#ff505e" }
 perm_exec  = { fg = "#8cc761" }
@@ -76,7 +80,7 @@ progress_error  = { fg = "#f1bd5b", bg = "#ff505e" }
 # : Pick {{{
 
 [pick]
-border   = { fg = "#da61fe" }
+border   = { fg = "#4e5666" }
 active   = { fg = "#ff505e", bold = true }
 inactive = {}
 
@@ -86,7 +90,7 @@ inactive = {}
 # : Input {{{
 
 [input]
-border   = { fg = "#da61fe" }
+border   = { fg = "#4e5666" }
 title    = {}
 value    = {}
 hint     = { fg = "#676f7d", italic = true }
@@ -98,7 +102,7 @@ selected = { reversed = true }
 # : Completion {{{
 
 [cmp]
-border = { fg = "#da61fe" }
+border = { fg = "#4e5666" }
 
 # : }}}
 
@@ -106,7 +110,7 @@ border = { fg = "#da61fe" }
 # : Tasks {{{
 
 [tasks]
-border  = { fg = "#da61fe" }
+border  = { fg = "#4e5666" }
 title   = {}
 hovered = { fg = "#ff505e", bold = true }
 
@@ -116,7 +120,7 @@ hovered = { fg = "#ff505e", bold = true }
 # : Which {{{
 
 [which]
-border          = { fg = "#da61fe" }
+border          = { fg = "#4e5666" }
 cand            = { fg = "#32b8c9" }
 rest            = { fg = "#9da5b4" }
 desc            = { fg = "#ff505e" }
@@ -140,8 +144,8 @@ footer  = { fg = "#262c36", bg = "#abb2bf" }
 # : Spotter {{{
 
 [spot]
-border   = { fg = "#da61fe" }
-title    = { fg = "#da61fe" }
+border   = { fg = "#4e5666" }
+title    = { fg = "#abb2bf" }
 tbl_col  = { fg = "#32b8c9" }
 tbl_cell = { fg = "#ff505e", bg = "#4e5666" }
 
@@ -175,7 +179,7 @@ rules = [
 	{ mime = "vfs/{absent,stale}", fg = "#9da5b4" },
 	# Fallback
 	{ url = "*", fg = "#abb2bf" },
-	{ url = "*/", fg = "#da61fe" },
+	{ url = "*/", fg = "#4dafff" },
 ]
 
 # : }}}
@@ -184,19 +188,19 @@ rules = [
 
 dirs = [
 	{ name = ".config", text = "", fg = "#ff505e" },
-	{ name = ".git", text = "", fg = "#32b8c9" },
+	{ name = ".git", text = "", fg = "#4dafff" },
 	{ name = ".github", text = "", fg = "#da61fe" },
-	{ name = ".npm", text = "", fg = "#da61fe" },
-	{ name = "Desktop", text = "", fg = "#32b8c9" },
-	{ name = "Development", text = "", fg = "#32b8c9" },
-	{ name = "Documents", text = "", fg = "#32b8c9" },
-	{ name = "Downloads", text = "", fg = "#32b8c9" },
-	{ name = "Library", text = "", fg = "#32b8c9" },
-	{ name = "Movies", text = "", fg = "#32b8c9" },
-	{ name = "Music", text = "", fg = "#32b8c9" },
-	{ name = "Pictures", text = "", fg = "#32b8c9" },
-	{ name = "Public", text = "", fg = "#32b8c9" },
-	{ name = "Videos", text = "", fg = "#32b8c9" },
+	{ name = ".npm", text = "", fg = "#ff505e" },
+	{ name = "Desktop", text = "", fg = "#4dafff" },
+	{ name = "Development", text = "", fg = "#4dafff" },
+	{ name = "Documents", text = "", fg = "#4dafff" },
+	{ name = "Downloads", text = "", fg = "#4dafff" },
+	{ name = "Library", text = "", fg = "#4dafff" },
+	{ name = "Movies", text = "", fg = "#4dafff" },
+	{ name = "Music", text = "", fg = "#4dafff" },
+	{ name = "Pictures", text = "", fg = "#4dafff" },
+	{ name = "Public", text = "", fg = "#4dafff" },
+	{ name = "Videos", text = "", fg = "#4dafff" },
 ]
 conds = [
 	# Special files
@@ -210,8 +214,8 @@ conds = [
 	{ if = "dummy", text = "", fg = "#ff505e" },
 
 	# Fallback
-	{ if = "dir & hovered", text = "", fg = "#da61fe" },
-	{ if = "dir", text = "", fg = "#da61fe" },
+	{ if = "dir & hovered", text = "", fg = "#4dafff" },
+	{ if = "dir", text = "", fg = "#4dafff" },
 	{ if = "exec", text = "", fg = "#8cc761" },
 	{ if = "!dir", text = "", fg = "#abb2bf" },
 ]

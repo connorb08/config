@@ -13,6 +13,12 @@ assert ($nushell | str contains "alias ll = ls -l")
 assert ($nushell | str contains "alias cat = ^bat --paging=never")
 assert not ($nushell | str contains "alias ls =")
 assert not ($nushell | str contains "alias find =")
+# [git] shortcuts reach every shell; fish expands them as abbreviations.
+assert ($posix | str contains "alias gs='git status'")
+assert ($fish | str contains "abbr -a gs git status")
+assert ($nushell | str contains "alias gs = ^git status")
+let twice = (try { render {aliases: {gs: ["git", "status"]}, git: {gs: ["status"]}} posix; false } catch { true })
+assert $twice
 
 for invalid in [
     {aliases: {"g;echo": ["git"]}}

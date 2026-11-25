@@ -10,7 +10,17 @@ export def render [config: record shell: string] {
     let optional = ($config.optional? | default [])
     mut lines = ["# Generated from aliases.toml by scripts/shell-aliases.nu. Do not edit."]
 
-    for row in ($config.aliases | transpose name args) {
+    # [git] entries are `git <args>` shortcuts; fish gets them as abbreviations.
+    let plain = ($config.aliases | transpose name args | insert git false)
+    let git = ($config.git? | default {} | transpose name args | insert git true
+        | each {|row| $row | update args (if ($row.args | describe) =~ "^list" { ["git"] ++ $row.args } else { $row.args }) })
+    let rows = ($plain ++ $git)
+    let duplicates = ($rows | get name | uniq --repeated)
+    if ($duplicates | is-not-empty) {
+        error make { msg: $"Alias defined twice: ($duplicates | str join ', ')" }
+    }
+
+    for row in $rows {
         if $row.name !~ '^(?:[A-Za-z_][A-Za-z0-9_-]*|\.{2,3})$' {
             error make { msg: $"Invalid alias name: ($row.name)" }
         }
@@ -29,7 +39,7 @@ export def render [config: record shell: string] {
         } else {
             let definition = if $shell == "posix" {
                 $"alias ($row.name)='($command)'"
-            } else if $row.name in $abbreviations {
+            } else if $row.name in $abbreviations or $row.git {
                 $"abbr -a ($row.name) ($command)"
             } else {
                 $"alias ($row.name) '($command)'"

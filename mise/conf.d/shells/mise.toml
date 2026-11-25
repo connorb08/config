@@ -2,6 +2,8 @@
 # rather than living in a mise.unix.toml, because loading that file needs
 # `auto_env`, and `auto_env` stops `mise lock` from seeing the project's tools.
 # Installer-managed startup files are kept; only their managed blocks are edited.
+# Block edits cannot be limited by OS; on Windows each block only sources a
+# file that does not exist there, behind a `[ -r ... ]` check.
 [dotfiles."~/.config/bash/bashrc"]
 source = "../../../dotfiles/shells/bash/bashrc.sh"
 mode = "symlink"
@@ -41,19 +43,16 @@ variants = [{ os = "unix" }]
 block = '''
 [ -r ~/.config/bash/bashrc ] && . ~/.config/bash/bashrc
 '''
-os = "unix"
 
 [dotfiles."~/.bash_profile/dotfiles"]
 block = '''
 [ -r ~/.config/bash/bashrc ] && . ~/.config/bash/bashrc
 '''
-os = "unix"
 
 [dotfiles."~/.zshrc/dotfiles"]
 block = '''
 [ -r ~/.config/zsh/zshrc ] && source ~/.config/zsh/zshrc
 '''
-os = "unix"
 
 # Repos cannot be limited by OS; on Windows these clones are simply unused.
 [bootstrap.repos]

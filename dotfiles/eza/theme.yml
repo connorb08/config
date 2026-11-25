@@ -3,7 +3,7 @@ colourful: true
 
 filekinds:
   normal: {foreground: "#abb2bf"}
-  directory: {foreground: "#32b8c9"}
+  directory: {foreground: "#4dafff"}
   symlink: {foreground: "#da61fe"}
   pipe: {foreground: "#676f7d"}
   block_device: {foreground: "#ff505e"}

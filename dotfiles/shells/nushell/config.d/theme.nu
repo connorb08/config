@@ -49,9 +49,9 @@ $env.config.color_config = {
     shape_float: $one_monokai_darker.purple
     shape_bool: $one_monokai_darker.purple
     shape_datetime: $one_monokai_darker.orange
-    shape_filepath: $one_monokai_darker.cyan
-    shape_directory: $one_monokai_darker.cyan
-    shape_globpattern: $one_monokai_darker.cyan
+    shape_filepath: $one_monokai_darker.aqua
+    shape_directory: $one_monokai_darker.aqua
+    shape_globpattern: $one_monokai_darker.aqua
     shape_flag: $one_monokai_darker.orange
     shape_variable: $one_monokai_darker.aqua
     shape_vardecl: $one_monokai_darker.aqua

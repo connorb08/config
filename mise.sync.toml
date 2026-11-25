@@ -1,7 +1,14 @@
-# Enable later: mise -E sync bootstrap services apply
+# Enable: mise -C ~/repos/connorb08/config -E sync bootstrap services apply
+# Check:  mise -C ~/repos/connorb08/config -E sync bootstrap services status
+# Remove: mise -C ~/repos/connorb08/config -E sync bootstrap services remove dotfiles-sync
 [bootstrap.services.dotfiles-sync]
 scope = "user"
 description = "Commit, pull and push the dotfiles checkout every 10 minutes"
-command = '"{{ mise_bin }}" -C "{{ config_root }}" run dotfiles:autosync'
+# Service commands are not templated ({{ config_root }} stays literal) and run
+# with launchd/systemd's bare PATH, so the checkout is named here and mise is
+# looked up in its usual install locations. Change the path if the repo lives
+# elsewhere. macOS/Linux only (needs /bin/sh).
+working_directory = "~/repos/connorb08/config"
+command = "/bin/sh -c 'PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\" exec mise run dotfiles:autosync'"
 restart = "always"
 requires_tools = true
