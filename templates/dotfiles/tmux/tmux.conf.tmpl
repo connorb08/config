@@ -1,0 +1,82 @@
+# tmux 3.2+. Keep the default Ctrl-b prefix; prefix+r reloads this file.
+# On macOS, WezTerm also sends Ctrl-b for Cmd-b (dotfiles/wezterm/keys.lua).
+# Plugins (bottom of this file) are managed by TPM, which `mise bootstrap` clones
+# to ~/.tmux/plugins/tpm; prefix+I installs new ones, prefix+U updates them.
+set -g default-terminal "tmux-256color"
+set -as terminal-features ",xterm-256color:RGB,wezterm:RGB"
+set -g mouse on
+set -g history-limit 50000
+set -s escape-time 10
+set -g focus-events on
+# on: programs inside tmux (nvim over SSH) can copy to the local clipboard via OSC 52.
+set -g set-clipboard on
+set -g renumber-windows on
+set -g base-index 1
+setw -g pane-base-index 1
+setw -g mode-keys vi
+
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
+bind r source-file ~/.tmux.conf \; display-message "tmux config reloaded"
+bind -r h select-pane -L
+bind -r j select-pane -D
+bind -r k select-pane -U
+bind -r l select-pane -R
+bind -r H resize-pane -L 5
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r L resize-pane -R 5
+bind -T copy-mode-vi v send-keys -X begin-selection
+bind -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+# Ctrl-h/j/k/l move between panes and Neovim splits (vim-tmux-navigator below),
+# so clearing the screen moves to prefix+Ctrl-l.
+bind C-l send-keys C-l
+
+# Closing a session switches to another one instead of leaving tmux.
+set -g detach-on-destroy off
+# The terminal's title shows the session and window.
+set -g set-titles on
+set -g set-titles-string "#S / #W"
+# Let programs reach the terminal directly (yazi's image previews, OSC sequences).
+set -g allow-passthrough on
+
+# One Monokai Darker: the source theme's UI greys (active tab {{ line }}, selection
+# {{ selection }}, status text {{ fg_dim }}); its brighter syntax colours mark state only.
+set -g pane-border-style "fg={{ border }}"
+set -g pane-active-border-style "fg={{ comment }}"
+set -g message-style "fg={{ fg }},bg={{ line }}"
+setw -g mode-style "fg={{ fg_bright }},bg={{ selection }}"
+set -g status-style "fg={{ fg_dim }},bg={{ bg_dark }}"
+set -g status-interval 5
+set -g status-left-length 40
+set -g status-right-length 40
+set -g status-left "#[fg={{ green }},bold] #S #[default]#{?client_prefix,#[fg={{ yellow }}] PREFIX ,}"
+set -g status-right "#{?window_zoomed_flag,#[fg={{ orange }}] zoom ,}#[fg={{ fg_dim }}]%a %H:%M "
+setw -g window-status-format " #I:#W "
+setw -g window-status-current-format "#[fg={{ fg_bright }},bg={{ line }},bold] #I:#W #[default]"
+setw -g window-status-activity-style "fg={{ yellow }}"
+setw -g monitor-activity on
+set -g visual-activity off
+
+# ---------------------------------------------------------------- plugins
+# tmux-sensible: widely agreed defaults; it leaves anything set above alone.
+# tmux-resurrect + tmux-continuum: save sessions every 15 minutes and restore
+#   them when tmux starts (prefix+Ctrl-s saves now, prefix+Ctrl-r restores).
+# vim-tmux-navigator: Ctrl-h/j/k/l across panes and Neovim splits alike
+#   (its Neovim half is in dotfiles/neovim/nvim/lua/plugins/editor.lua).
+# Not tmux-yank: it copies through xclip, which starts an X server over SSH;
+# set-clipboard on already copies to the local clipboard with OSC 52.
+set -g @plugin "tmux-plugins/tpm"
+set -g @plugin "tmux-plugins/tmux-sensible"
+set -g @plugin "tmux-plugins/tmux-resurrect"
+set -g @plugin "tmux-plugins/tmux-continuum"
+set -g @plugin "christoomey/vim-tmux-navigator"
+
+set -g @resurrect-capture-pane-contents "on"
+set -g @continuum-restore "on"
+set -g @continuum-save-interval "15"
+
+# Last line, after every setting: TPM loads the plugins. Skipped quietly on a
+# machine where `mise bootstrap` has not cloned TPM yet.
+if-shell "test -x ~/.tmux/plugins/tpm/tpm" "run-shell ~/.tmux/plugins/tpm/tpm"

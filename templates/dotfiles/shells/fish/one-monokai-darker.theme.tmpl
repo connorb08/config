@@ -1,0 +1,25 @@
+# One Monokai Darker, matching WezTerm and Starship.
+fish_color_normal {{ fg.bare }}
+fish_color_command {{ green.bare }}
+fish_color_keyword {{ red.bare }}
+fish_color_quote {{ yellow.bare }}
+fish_color_redirection {{ purple.bare }}
+fish_color_end {{ red.bare }}
+fish_color_error {{ red.bare }}
+# Arguments in the theme's yellow (as in Nushell and zsh), not its orange ({{ orange }}),
+# which is for function parameters in code.
+fish_color_param {{ yellow.bare }}
+fish_color_comment {{ comment.bare }}
+fish_color_operator {{ red.bare }}
+fish_color_escape {{ purple.bare }}
+fish_color_autosuggestion {{ comment.bare }}
+fish_color_selection {{ fg_bright.bare }} --background={{ selection.bare }}
+fish_color_search_match {{ fg.bare }} --background={{ search.bare }}
+fish_color_valid_path --underline
+fish_color_cancel {{ red.bare }} --reverse
+fish_color_history_current --bold
+fish_pager_color_progress {{ comment.bare }}
+fish_pager_color_prefix {{ cyan.bare }} --bold
+fish_pager_color_completion {{ fg.bare }}
+fish_pager_color_description {{ comment.bare }}
+fish_pager_color_selected_background --background={{ selection.bare }}

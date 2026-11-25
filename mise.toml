@@ -52,7 +52,18 @@ run_windows = "mise install"
 # add a `setup:<tool>` task for steps a file cannot express.
 [tasks.bootstrap]
 description = "Per-tool setup steps"
-depends = ["setup:*"]
+depends = ["palette", "setup:*"]
+
+# ---------------------------------------------------------------- colours
+
+# Every tool's colours come from palette.toml through the templates under
+# templates/. This writes the outputs that changed (and rebuilds bat's cache,
+# reloads tmux). It runs before every dotfiles sync, so a palette change is
+# picked up within 10 minutes; `mise watch palette` regenerates on each save.
+[tasks.palette]
+description = "Regenerate every tool's colours from palette.toml"
+sources = ["palette.toml", "templates/**/*.tmpl", "scripts/palette.nu"]
+run = 'nu --no-config-file "{{ config_root }}/scripts/palette.nu" "{{ config_root }}"'
 
 # ---------------------------------------------------------------- sync
 
@@ -60,6 +71,7 @@ depends = ["setup:*"]
 
 [tasks."dotfiles:sync"]
 description = "Commit dotfile changes, pull, and push"
+depends = ["palette"]
 run = 'nu --no-config-file "{{ config_root }}/scripts/dotfiles-sync.nu" "{{ config_root }}"'
 
 [tasks."dotfiles:autosync"]

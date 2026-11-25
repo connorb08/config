@@ -1,0 +1,266 @@
+# Starship prompt, shared by zsh, bash, fish and nushell.
+#
+#   󰈺 fish  config  main !2 ?1                                3s
+#   ❯
+#
+# Line 1 is which shell this is, where you are (directory, git branch and
+# state), then on the right how long the last command took.
+# Line 2 is the prompt character, green or red for the last command's result.
+# The OS logo and hostname lead the pill on every machine.
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+command_timeout = 1000
+palette = "one_monokai_darker"
+
+format = """
+[](bg_panel)\
+$os\
+$hostname\
+$shell\
+$directory\
+[](fg:bg_panel bg:bg_accent)\
+$git_branch\
+$git_status\
+[](fg:bg_accent)\
+$fill\
+$cmd_duration\
+$line_break\
+$character"""
+
+# One Monokai Darker, matching dotfiles/wezterm/theme.lua and tmux.conf.
+[palettes.one_monokai_darker]
+bg_dark = "{{ bg_dark }}"
+bg_panel = "{{ line }}"
+bg_accent = "{{ selection }}"
+fg = "{{ fg }}"
+muted = "{{ comment }}"
+red = "{{ red }}"
+yellow = "{{ yellow }}"
+green = "{{ green }}"
+cyan = "{{ cyan }}"
+blue = "{{ blue }}"   # the theme's class/type colour, used for locations
+purple = "{{ purple }}"
+orange = "{{ orange }}"
+
+
+[directory]
+style = "bold blue bg:bg_panel"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bold green bg:bg_accent"
+format = "[ $branch ]($style)"
+
+[git_status]
+style = "bold yellow bg:bg_accent"
+format = "([$all_status$ahead_behind ]($style))"
+conflicted = "="
+ahead = "↑${count}"
+behind = "↓${count}"
+diverged = "↕"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[fill]
+symbol = " "
+
+[cmd_duration]
+min_time = 2_000
+style = "muted"
+format = "[$duration]($style)"
+
+# Which machine: OS logo and hostname, first in the pill, then a thin divider.
+[os]
+disabled = false
+style = "bold fg bg:bg_panel"
+format = "[ $symbol ]($style)"
+
+[os.symbols]
+Macos = ""
+Linux = ""
+Windows = ""
+Ubuntu = ""
+Debian = ""
+Fedora = ""
+Arch = ""
+Alpine = ""
+NixOS = ""
+Raspbian = ""
+Manjaro = ""
+Pop = ""
+RedHatEnterprise = ""
+Redhat = ""
+CentOS = ""
+openSUSE = ""
+Gentoo = ""
+FreeBSD = ""
+AlmaLinux = ""
+RockyLinux = ""
+
+[hostname]
+ssh_only = false
+trim_at = "."
+style = "fg bg:bg_panel"
+format = "[$hostname ]($style)[](fg:muted bg:bg_panel)"
+
+# Which shell this prompt belongs to, inside the pill before the directory,
+# each in its own color; fish gets a
+# little fish. The indicators are format strings, so they carry their style.
+# Icons are Nerd Font glyphs; Nerd Fonts has no Nushell icon, so nu gets a terminal.
+[shell]
+disabled = false
+format = "[ ](bg:bg_panel)$indicator[ ](fg:muted bg:bg_panel)"
+fish_indicator = "[󰈺 fish](bold blue bg:bg_panel)"
+nu_indicator = "[ nu](bold green bg:bg_panel)"
+zsh_indicator = "[ zsh](bold purple bg:bg_panel)"
+bash_indicator = "[ bash](bold orange bg:bg_panel)"
+powershell_indicator = "[󰨊 pwsh](bold muted bg:bg_panel)"
+unknown_indicator = "[?](muted bg:bg_panel)"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold cyan)"
+
+
+
+
+# Starship prompt, shared by zsh, bash, fish and nushell.
+#
+#   󰈺 fish  config  main !2 ?1                                3s
+#   ❯
+#
+# Line 1 is which shell this is, where you are (directory, git branch and
+# state), then on the right how long the last command took.
+# Line 2 is the prompt character, green or red for the last command's result.
+# The user and host appear only over SSH.
+# "$schema" = 'https://starship.rs/config-schema.json'
+
+# add_newline = true
+# command_timeout = 1000
+# palette = "one_monokai_darker"
+
+# format = """
+# $username$hostname$directory$git_branch$git_commit$git_state$git_status$fill$jobs$cmd_duration$python$rust$dotnet$nodejs$golang
+# $character"""
+
+# [fill]
+# symbol = " "
+
+# [character]
+# success_symbol = "[❯](bold green)"
+# error_symbol = "[❯](bold red)"
+# vimcmd_symbol = "[❮](bold purple)"
+# vimcmd_replace_one_symbol = "[❮](bold orange)"
+# vimcmd_replace_symbol = "[❮](bold orange)"
+# vimcmd_visual_symbol = "[❮](bold cyan)"
+
+# [username]
+# format = "[$user]($style) "
+# style_user = "bold cyan"
+# style_root = "bold red"
+
+# [hostname]
+# format = "[@$hostname]($style) "
+# style = "bold cyan"
+
+# [directory]
+# style = "bold aqua"
+# truncation_length = 3
+# truncate_to_repo = true
+# truncation_symbol = "…/"
+# read_only = " 󰌾"
+# read_only_style = "yellow"
+
+# # ---- git: branch, then a count per kind of change
+# [git_branch]
+# format = "[$symbol$branch(:$remote_branch)]($style) "
+# symbol = " "
+# style = "green"
+# truncation_length = 24
+
+# [git_commit]
+# format = "[$hash$tag]($style) "
+# style = "purple"
+
+# [git_state]
+# format = "[$state( $progress_current/$progress_total)]($style) "
+# style = "bold yellow"
+
+# [git_status]
+# format = "([$all_status$ahead_behind]($style))"
+# style = "yellow"
+# conflicted = "=${count} "
+# staged = "+${count} "
+# modified = "!${count} "
+# renamed = "»${count} "
+# deleted = "✘${count} "
+# untracked = "?${count} "
+# stashed = "*${count} "
+# ahead = "⇡${count} "
+# behind = "⇣${count} "
+# diverged = "⇡${ahead_count}⇣${behind_count} "
+
+# # ---- right side: quiet, and only when there is something to say
+# [jobs]
+# format = "[$symbol$number]($style) "
+# style = "purple"
+# number_threshold = 1
+
+# [cmd_duration]
+# min_time = 2000
+# format = "[took $duration]($style) "
+# style = "yellow"
+
+# [python]
+# format = "[$symbol$version( \\($virtualenv\\))]($style) "
+# symbol = " "
+# style = "yellow"
+# version_format = "${raw}"
+
+# [rust]
+# format = "[$symbol$version]($style) "
+# symbol = "󱘗 "
+# style = "orange"
+# version_format = "${raw}"
+
+# [dotnet]
+# format = "[$symbol$version]($style) "
+# symbol = " "
+# style = "purple"
+# version_format = "${raw}"
+
+# [nodejs]
+# format = "[$symbol$version]($style) "
+# symbol = " "
+# style = "green"
+# version_format = "${raw}"
+
+# [golang]
+# format = "[$symbol$version]($style) "
+# symbol = " "
+# style = "cyan"
+# version_format = "${raw}"
+
+# # Terminal colors plus syntax accents from the One Monokai Darker source theme.
+# [palettes.one_monokai_darker]
+# background = "{{ bg }}"
+# current_line = "{{ line }}"
+# foreground = "{{ fg }}"
+# comment = "{{ comment }}"
+# blue = "{{ blue_ansi }}"
+# aqua = "{{ blue }}"
+# cyan = "{{ cyan }}"
+# green = "{{ green }}"
+# purple = "{{ purple }}"
+# red = "{{ red }}"
+# yellow = "{{ yellow }}"
+# orange = "{{ orange }}"

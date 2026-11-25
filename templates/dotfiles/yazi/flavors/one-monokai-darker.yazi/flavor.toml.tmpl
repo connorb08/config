@@ -1,0 +1,221 @@
+# One Monokai Darker, adapted from yazi-rs/flavors (MIT).
+# UI greys as in the VS Code theme (active tab {{ line }}, selection {{ selection }});
+# blue ({{ blue }}, the theme's class colour) for directories, as in eza;
+# cyan marks select mode and state.
+# Purple is kept to a single folder icon.
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : Manager {{{
+
+[mgr]
+cwd = { fg = "{{ blue }}" }
+
+# Find
+find_keyword  = { fg = "{{ yellow }}", bold = true, italic = true, underline = true }
+find_position = { fg = "{{ red }}", bg = "reset", bold = true, italic = true }
+
+# Marker
+marker_copied   = { fg = "{{ green }}", bg = "{{ green }}" }
+marker_cut      = { fg = "{{ red }}", bg = "{{ red }}" }
+marker_marked   = { fg = "{{ cyan }}", bg = "{{ cyan }}" }
+marker_selected = { fg = "{{ yellow }}", bg = "{{ yellow }}" }
+
+# Count
+count_copied   = { fg = "{{ bg }}", bg = "{{ green }}" }
+count_cut      = { fg = "{{ bg }}", bg = "{{ red }}" }
+count_selected = { fg = "{{ bg }}", bg = "{{ yellow }}" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "{{ comment }}" }
+
+# : }}}
+
+
+# : Tabs {{{
+
+[tabs]
+active   = { fg = "{{ fg_bright }}", bg = "{{ line }}", bold = true }
+inactive = { fg = "{{ fg_dim }}", bg = "{{ bg_dark }}" }
+
+# : }}}
+
+
+# : Mode {{{
+
+[mode]
+
+normal_main = { fg = "{{ fg_bright }}", bg = "{{ selection }}", bold = true }
+normal_alt  = { fg = "{{ fg_dim }}", bg = "{{ line }}" }
+
+# Select mode
+select_main = { fg = "{{ bg }}", bg = "{{ cyan }}", bold = true }
+select_alt  = { fg = "{{ cyan }}", bg = "{{ line }}" }
+
+# Unset mode
+unset_main = { fg = "{{ bg }}", bg = "{{ yellow }}", bold = true }
+unset_alt  = { fg = "{{ yellow }}", bg = "{{ line }}" }
+
+# : }}}
+
+
+# : Status bar {{{
+
+[status]
+# Permissions
+perm_sep   = { fg = "{{ comment }}" }
+perm_type  = { fg = "{{ cyan }}" }
+perm_read  = { fg = "{{ yellow }}" }
+perm_write = { fg = "{{ red }}" }
+perm_exec  = { fg = "{{ green }}" }
+
+# Progress
+progress_label  = { fg = "{{ fg_bright }}", bold = true }
+progress_normal = { fg = "{{ green }}", bg = "{{ scrollbar }}" }
+progress_error  = { fg = "{{ yellow }}", bg = "{{ red }}" }
+
+# : }}}
+
+
+# : Pick {{{
+
+[pick]
+border   = { fg = "{{ scrollbar }}" }
+active   = { fg = "{{ red }}", bold = true }
+inactive = {}
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border   = { fg = "{{ scrollbar }}" }
+title    = {}
+value    = {}
+hint     = { fg = "{{ comment }}", italic = true }
+selected = { reversed = true }
+
+# : }}}
+
+
+# : Completion {{{
+
+[cmp]
+border = { fg = "{{ scrollbar }}" }
+
+# : }}}
+
+
+# : Tasks {{{
+
+[tasks]
+border  = { fg = "{{ scrollbar }}" }
+title   = {}
+hovered = { fg = "{{ red }}", bold = true }
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+border          = { fg = "{{ scrollbar }}" }
+cand            = { fg = "{{ cyan }}" }
+rest            = { fg = "{{ fg_dim }}" }
+desc            = { fg = "{{ red }}" }
+separator       = "  "
+separator_style = { fg = "{{ comment }}" }
+
+# : }}}
+
+
+# : Help {{{
+
+[help]
+on      = { fg = "{{ cyan }}" }
+run     = { fg = "{{ red }}" }
+hovered = { reversed = true, bold = true }
+footer  = { fg = "{{ line }}", bg = "{{ fg }}" }
+
+# : }}}
+
+
+# : Spotter {{{
+
+[spot]
+border   = { fg = "{{ scrollbar }}" }
+title    = { fg = "{{ fg }}" }
+tbl_col  = { fg = "{{ cyan }}" }
+tbl_cell = { fg = "{{ red }}", bg = "{{ scrollbar }}" }
+
+# : }}}
+
+
+# : Notification {{{
+
+[notify]
+title_info  = { fg = "{{ green }}" }
+title_warn  = { fg = "{{ yellow }}" }
+title_error = { fg = "{{ red }}" }
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+
+rules = [
+	# Image
+	{ mime = "**/image/*", fg = "{{ cyan }}" },
+	# Media
+	{ mime = "**/{audio,video}/*", fg = "{{ yellow }}" },
+	# Archive
+	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "{{ red }}" },
+	# Document
+	{ mime = "**/application/{pdf,doc,rtf}", fg = "{{ green }}" },
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "{{ fg_dim }}" },
+	# Fallback
+	{ url = "*", fg = "{{ fg }}" },
+	{ url = "*/", fg = "{{ blue }}" },
+]
+
+# : }}}
+
+[icon]
+
+dirs = [
+	{ name = ".config", text = "", fg = "{{ red }}" },
+	{ name = ".git", text = "", fg = "{{ blue }}" },
+	{ name = ".github", text = "", fg = "{{ purple }}" },
+	{ name = ".npm", text = "", fg = "{{ red }}" },
+	{ name = "Desktop", text = "", fg = "{{ blue }}" },
+	{ name = "Development", text = "", fg = "{{ blue }}" },
+	{ name = "Documents", text = "", fg = "{{ blue }}" },
+	{ name = "Downloads", text = "", fg = "{{ blue }}" },
+	{ name = "Library", text = "", fg = "{{ blue }}" },
+	{ name = "Movies", text = "", fg = "{{ blue }}" },
+	{ name = "Music", text = "", fg = "{{ blue }}" },
+	{ name = "Pictures", text = "", fg = "{{ blue }}" },
+	{ name = "Public", text = "", fg = "{{ blue }}" },
+	{ name = "Videos", text = "", fg = "{{ blue }}" },
+]
+conds = [
+	# Special files
+	{ if = "orphan", text = "", fg = "{{ fg }}" },
+	{ if = "link", text = "", fg = "{{ grey }}" },
+	{ if = "block", text = "", fg = "{{ yellow }}" },
+	{ if = "char", text = "", fg = "{{ yellow }}" },
+	{ if = "fifo", text = "", fg = "{{ yellow }}" },
+	{ if = "sock", text = "", fg = "{{ yellow }}" },
+	{ if = "sticky", text = "", fg = "{{ yellow }}" },
+	{ if = "dummy", text = "", fg = "{{ red }}" },
+
+	# Fallback
+	{ if = "dir & hovered", text = "", fg = "{{ blue }}" },
+	{ if = "dir", text = "", fg = "{{ blue }}" },
+	{ if = "exec", text = "", fg = "{{ green }}" },
+	{ if = "!dir", text = "", fg = "{{ fg }}" },
+]

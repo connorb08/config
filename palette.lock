@@ -1,0 +1,19 @@
+{
+  "dotfiles/eza/theme.yml": "e68f170d04221981942fe8a84ca9b881d5cdf15907fc55f0faa0d0ee01a85b3a",
+  "dotfiles/k9s/skins/one-monokai-darker.yaml": "c693bac5ff298ec6717721b489d76b57e31604aa2f3b97f17c5b5b0850dd1325",
+  "dotfiles/neovim/nvim/lua/plugins/ui.lua": "19c18724d71c48c71ea46c9612e05d22bbb2f2f6a57cd9e5f2f14f7b285c6cf7",
+  "dotfiles/shells/fish/config.d/environment.fish": "3c59ccf49c491f7ccd1a7c17e9193d03a78097855f36a1d6ba9013c6dd23e93d",
+  "dotfiles/shells/fish/config.d/fzf.fish": "b0167636dbe9aa5498aba6c46294ef934f3b418c2b3d63089cec0993ad885ec4",
+  "dotfiles/shells/fish/one-monokai-darker.theme": "7af0690e279216de3a052d3b48bdbd120f6bc88854e50844bef5a2c93067dc04",
+  "dotfiles/shells/nushell/config.d/completion.nu": "91253dce520740ef05508361affc4d00e95406acdf7ac32d936f326b421093c0",
+  "dotfiles/shells/nushell/config.d/environment.nu": "a45cc47090046240fc65ed1cd839f90f0b28210afa6ce1c81f6857c03d116fad",
+  "dotfiles/shells/nushell/config.d/theme.nu": "ece324285ce1fe46c1f5e55cd5f611b76e6d77d3179fc250dd58082620632255",
+  "dotfiles/shells/shared/environment.sh": "e32e942462c3b53fcb9a492e70cff9d8e0156d7843d7ef546f53b55d8e59c105",
+  "dotfiles/shells/shared/fzf.sh": "265f5bebca1e71ea7c7379bac57b8f6904a9af976c2d259f7dd4b46eba568d51",
+  "dotfiles/shells/zsh/config.d/one-monokai-darker.zsh": "e680601e23e3eeb5b287c65319d77bc6106f19ba1661c16db4af70a77122306f",
+  "dotfiles/starship/starship.toml": "eed00b7557200b80503f5fffb1ffc251af6d05035226dac404c50a1b500fcfab",
+  "dotfiles/tmux/tmux.conf": "b261b278c813ac2048cfeaf0c00b73080de702db8781846c0a0208eda4fec779",
+  "dotfiles/wezterm/theme.lua": "7de5af8de4232b47871b8670eec56f1243cdf519ebb7b1a025e0d376ab8049b2",
+  "dotfiles/yazi/flavors/one-monokai-darker.yazi/flavor.toml": "4fc0507fa07fc61c6eca2383043a1a8820a8677c6b7e03c139769cadd39929d2",
+  "dotfiles/yazi/flavors/one-monokai-darker.yazi/tmtheme.xml": "4b017165b648e556a23921fc6b22867dd3430fef5e0cf85a476baf54876caa3b"
+}

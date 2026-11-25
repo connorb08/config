@@ -1,0 +1,77 @@
+$env.config.completions.algorithm = "fuzzy"
+$env.config.completions.case_sensitive = false
+# One Tab opens the menu. With `partial` on, the first Tab only inserted the
+# prefix shared by every match; fuzzy matches rarely share one, so the line
+# jumped and the menu needed a second Tab.
+$env.config.completions.partial = false
+# A single match is inserted straight away.
+$env.config.completions.quick = true
+$env.config.highlight_resolved_externals = true
+
+# Completion menu as a list with each candidate's description beside it
+# (carapace supplies them for flags and subcommands), styled like VS Code's
+# suggestion list in One Monokai Darker.
+# Tab / Shift-Tab move through it, Enter accepts, Esc closes.
+$env.config.menus = ($env.config.menus | where name != completion_menu | append {
+    name: completion_menu
+    only_buffer_difference: false
+    marker: "| "
+    type: {
+        layout: ide
+        min_completion_width: 0
+        max_completion_width: 50
+        max_completion_height: 12
+        padding: 0
+        border: true
+        cursor_offset: 0
+        description_mode: "prefer_right"
+        min_description_width: 0
+        max_description_width: 60
+        max_description_height: 12
+        description_offset: 1
+        correct_cursor_pos: false
+    }
+    style: {
+        text: "{{ fg }}"
+        selected_text: { fg: "{{ fg_bright }}", bg: "{{ selection }}", attr: b }
+        description_text: "{{ comment }}"
+        match_text: { fg: "{{ yellow }}", attr: u }
+        selected_match_text: { fg: "{{ yellow }}", bg: "{{ selection }}", attr: bu }
+    }
+})
+
+# External commands: carapace first; for commands it has no completer for
+# (gopass, fnox, yq, bws) fish's, from the scripts `mise run setup:completions`
+# writes to ~/.config/fish/completions. carapace's own fish bridge cannot do
+# this: it runs fish with --no-config, which leaves that directory off the
+# completion path. When neither answers, Nushell completes file paths.
+# Set here, carapace's generated autoload keeps it instead of its own.
+$env.config.completions.external.enable = true
+$env.config.completions.external.completer = {|place|
+    let spans = (if ($place | describe) =~ "^record" { $place.command } else { $place })
+    # An alias completes as what it expands to: gco -> git checkout.
+    let expansion = (scope aliases | where name == ($spans | first) | get 0?.expansion?)
+    let spans = (if $expansion != null {
+        $spans | skip 1 | prepend ($expansion | str trim --left --char '^' | split row " ")
+    } else { $spans })
+    if ($spans | length) < 2 { return null }
+
+    let from_carapace = (if (which carapace | is-not-empty) {
+        try { with-env {CARAPACE_SHELL: nushell} { ^carapace ($spans | first) nushell ...$spans | from json } } catch { null }
+        # carapace reports failures (say, git outside a repository) as ERR entries.
+        | default [] | where {|c| $c.value !~ '^ERR\d*$' }
+    })
+    if ($from_carapace | is-not-empty) { return $from_carapace }
+
+    # Only commands with a generated fish script; for anything else fish would
+    # just list files, which Nushell's own path completion does better.
+    let script = ($nu.home-dir | path join ".config" "fish" "completions" $"($spans | first).fish")
+    if (which fish | is-empty) or not ($script | path exists) { return null }
+    let from_fish = (with-env {NU_COMPLETE_LINE: ($spans | str join " ")} {
+        ^fish --no-config --command 'set -p fish_complete_path ~/.config/fish/completions; complete --do-complete "$NU_COMPLETE_LINE"'
+    } | lines | where $it != "" | each {|line|
+        let parts = ($line | split row "\t")
+        {value: ($parts | first), description: ($parts | get 1? | default "")}
+    })
+    if ($from_fish | is-empty) { null } else { $from_fish }
+}

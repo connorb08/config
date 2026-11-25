@@ -68,7 +68,7 @@ def main [repo: path --check] {
         }
     }
     let lock_path = ($repo | path join "palette.lock")
-    let lock = (if ($lock_path | path exists) { open $lock_path } else { {} })
+    let lock = (if ($lock_path | path exists) { open --raw $lock_path | from json } else { {} })
     let templates = (glob ($repo | path join "templates" "**" "*.tmpl") | sort)
 
     mut new_lock = {}

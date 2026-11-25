@@ -1,0 +1,43 @@
+-- The colour scheme. appearance.lua registers it under `name`.
+return {
+    name = 'One Monokai Darker',
+    colors = {
+        foreground = '{{ fg }}',
+        background = '{{ bg }}',
+        cursor_bg = '{{ cursor }}',
+        cursor_fg = '{{ bg }}',
+        cursor_border = '{{ cursor }}',
+        selection_bg = '{{ selection }}',
+        selection_fg = '{{ fg_bright }}',
+        scrollbar_thumb = '{{ scrollbar }}',
+        split = '{{ border }}',
+        ansi = {
+            '{{ black }}', -- black
+            '{{ red }}', -- red
+            '{{ green }}', -- green
+            '{{ yellow }}', -- yellow
+            '{{ blue_ansi }}', -- blue
+            '{{ purple }}', -- magenta
+            '{{ cyan }}', -- cyan
+            '{{ fg_bright }}', -- white
+        },
+        brights = {
+            '{{ grey }}', -- black
+            '{{ red_bright }}', -- red
+            '{{ green }}', -- green
+            '{{ yellow }}', -- yellow
+            '{{ blue_ansi }}', -- blue
+            '{{ purple_dark }}', -- magenta
+            '{{ cyan }}', -- cyan
+            '{{ fg_bright }}', -- white
+        },
+        tab_bar = {
+            background = '{{ bg_dark }}',
+            active_tab = { bg_color = '{{ line }}', fg_color = '{{ fg_bright }}' },
+            inactive_tab = { bg_color = '{{ bg_dark }}', fg_color = '{{ fg_dim }}' },
+            inactive_tab_hover = { bg_color = '{{ hover }}', fg_color = '{{ fg_bright }}' },
+            new_tab = { bg_color = '{{ bg_dark }}', fg_color = '{{ fg_dim }}' },
+            new_tab_hover = { bg_color = '{{ hover }}', fg_color = '{{ fg_bright }}' },
+        },
+    },
+}

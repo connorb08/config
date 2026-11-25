@@ -1,0 +1,22 @@
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx PAGER less
+set -gx LESS -FRX
+# Silences macOS bash's "default shell is now zsh" notice in any bash started from here.
+set -gx BASH_SILENCE_DEPRECATION_WARNING 1
+# WezTerm and tmux show 24-bit colour; without COLORTERM, bat and delta round
+# every colour to the nearest of 256 (the theme's yellow turns orange).
+set -q COLORTERM; or set -gx COLORTERM truecolor
+# jq output (and yazi's JSON previews, which use jq) in Neovim's colours:
+# null/false/true, numbers, strings, arrays, objects, object keys.
+set -gx JQ_COLORS "0;38;2;{{ cyan.rgb }}:0;38;2;{{ cyan.rgb }}:0;38;2;{{ cyan.rgb }}:0;38;2;{{ purple.rgb }}:0;38;2;{{ yellow.rgb }}:0;38;2;{{ fg.rgb }}:0;38;2;{{ fg.rgb }}:0;38;2;{{ cyan.rgb }}"
+# $SHELL names the shell that is running, not just the login shell.
+set -gx SHELL (status fish-path)
+if type -q eza
+    set -gx EZA_CONFIG_DIR $HOME/.config/eza
+end
+if type -q bat
+    set -gx BAT_THEME "One Monokai Darker"
+    set -gx MANPAGER "sh -c 'col -bx | bat --language=man --plain'"
+    set -gx MANROFFOPT -c
+end

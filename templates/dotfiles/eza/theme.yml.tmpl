@@ -1,0 +1,103 @@
+# One Monokai Darker, adapted from https://github.com/eza-community/eza-themes/blob/main/themes/dracula.yml
+colourful: true
+
+filekinds:
+  normal: {foreground: "{{ fg }}"}
+  directory: {foreground: "{{ blue }}"}
+  symlink: {foreground: "{{ purple }}"}
+  pipe: {foreground: "{{ comment }}"}
+  block_device: {foreground: "{{ red }}"}
+  char_device: {foreground: "{{ red }}"}
+  socket: {foreground: "{{ line }}"}
+  special: {foreground: "{{ red }}"}
+  executable: {foreground: "{{ green }}"}
+  mount_point: {foreground: "{{ yellow }}"}
+
+perms:
+  user_read: {foreground: "{{ fg }}"}
+  user_write: {foreground: "{{ yellow }}"}
+  user_execute_file: {foreground: "{{ green }}"}
+  user_execute_other: {foreground: "{{ green }}"}
+  group_read: {foreground: "{{ fg }}"}
+  group_write: {foreground: "{{ yellow }}"}
+  group_execute: {foreground: "{{ green }}"}
+  other_read: {foreground: "{{ fg }}"}
+  other_write: {foreground: "{{ yellow }}"}
+  other_execute: {foreground: "{{ green }}"}
+  special_user_file: {foreground: "{{ red }}"}
+  special_other: {foreground: "{{ comment }}"}
+  attribute: {foreground: "{{ fg }}"}
+
+size:
+  major: {foreground: "{{ yellow }}"}
+  minor: {foreground: "{{ purple }}"}
+  number_byte: {foreground: "{{ fg }}"}
+  number_kilo: {foreground: "{{ fg }}"}
+  number_mega: {foreground: "{{ cyan }}"}
+  number_giga: {foreground: "{{ red }}"}
+  number_huge: {foreground: "{{ red }}"}
+  unit_byte: {foreground: "{{ fg }}"}
+  unit_kilo: {foreground: "{{ cyan }}"}
+  unit_mega: {foreground: "{{ red }}"}
+  unit_giga: {foreground: "{{ red }}"}
+  unit_huge: {foreground: "{{ yellow }}"}
+
+users:
+  user_you: {foreground: "{{ fg }}"}
+  user_root: {foreground: "{{ red }}"}
+  user_other: {foreground: "{{ red }}"}
+  group_yours: {foreground: "{{ fg }}"}
+  group_other: {foreground: "{{ comment }}"}
+  group_root: {foreground: "{{ red }}"}
+
+links:
+  normal: {foreground: "{{ purple }}"}
+  multi_link_file: {foreground: "{{ yellow }}"}
+
+git:
+  new: {foreground: "{{ green }}"}
+  modified: {foreground: "{{ yellow }}"}
+  deleted: {foreground: "{{ red }}"}
+  renamed: {foreground: "{{ cyan }}"}
+  typechange: {foreground: "{{ red }}"}
+  ignored: {foreground: "{{ comment }}"}
+  conflicted: {foreground: "{{ red }}"}
+
+git_repo:
+  branch_main: {foreground: "{{ fg }}"}
+  branch_other: {foreground: "{{ red }}"}
+  git_clean: {foreground: "{{ green }}"}
+  git_dirty: {foreground: "{{ red }}"}
+
+security_context:
+  colon: {foreground: "{{ comment }}"}
+  user: {foreground: "{{ fg }}"}
+  role: {foreground: "{{ red }}"}
+  typ: {foreground: "{{ comment }}"}
+  range: {foreground: "{{ red }}"}
+
+file_type:
+  image: {foreground: "{{ yellow }}"}
+  video: {foreground: "{{ red }}"}
+  music: {foreground: "{{ green }}"}
+  lossless: {foreground: "{{ green }}"}
+  crypto: {foreground: "{{ comment }}"}
+  document: {foreground: "{{ fg }}"}
+  compressed: {foreground: "{{ red }}"}
+  temp: {foreground: "{{ red }}"}
+  compiled: {foreground: "{{ cyan }}"}
+  build: {foreground: "{{ comment }}"}
+  source: {foreground: "{{ cyan }}"}
+
+punctuation: {foreground: "{{ comment }}"}
+date: {foreground: "{{ yellow }}"}
+inode: {foreground: "{{ fg }}"}
+blocks: {foreground: "{{ fg }}"}
+header: {foreground: "{{ fg }}"}
+octal: {foreground: "{{ green }}"}
+flags: {foreground: "{{ red }}"}
+
+symlink_path: {foreground: "{{ purple }}"}
+control_char: {foreground: "{{ cyan }}"}
+broken_symlink: {foreground: "{{ red }}"}
+broken_path_overlay: {foreground: "{{ comment }}"}
