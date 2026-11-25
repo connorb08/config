@@ -54,6 +54,19 @@ run_windows = "mise install"
 description = "Per-tool setup steps"
 depends = ["palette", "setup:*"]
 
+# ---------------------------------------------------------------- tools
+
+# Add a tool to tools.toml, pinned (latest unless a version is given), then lock
+# it, refresh the global copy and install it:  mise run tools:add ripgrep [16.0.0]
+[tasks."tools:add"]
+description = "Pin a tool in tools.toml, lock it and install it"
+usage = '''
+arg "<tool>" help="Tool to add, as for mise use: ripgrep, aqua:owner/repo, npm:prettier"
+arg "[version]" help="Version to pin (default: the latest)"
+flag "-n --dry-run" help="Show what would be pinned without changing anything"
+'''
+run = 'nu --no-config-file "{{ config_root }}/scripts/tools-add.nu" "{{ config_root }}" "{{ usage.tool }}" "{{ usage.version | default(value="") }}" {% if usage.dry_run %}--dry-run{% endif %}'
+
 # ---------------------------------------------------------------- colours
 
 # Every tool's colours come from palette.toml through the templates under
