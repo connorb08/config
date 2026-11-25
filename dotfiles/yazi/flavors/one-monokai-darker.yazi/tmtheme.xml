@@ -670,9 +670,9 @@
 			<!-- Matches Neovim (lua/plugins/ui.lua) -->
 		<dict>
 			<key>name</key>
-			<string>TOML key</string>
+			<string>TOML and YAML key</string>
 			<key>scope</key>
-			<string>entity.name.tag.toml</string>
+			<string>entity.name.tag.toml, entity.name.tag.yaml</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

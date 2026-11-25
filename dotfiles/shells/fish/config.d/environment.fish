@@ -4,6 +4,9 @@ set -gx PAGER less
 set -gx LESS -FRX
 # Silences macOS bash's "default shell is now zsh" notice in any bash started from here.
 set -gx BASH_SILENCE_DEPRECATION_WARNING 1
+# jq output (and yazi's JSON previews, which use jq) in Neovim's colours:
+# null/false/true, numbers, strings, arrays, objects, object keys.
+set -gx JQ_COLORS "0;38;2;50;184;201:0;38;2;50;184;201:0;38;2;50;184;201:0;38;2;218;97;254:0;38;2;241;189;91:0;38;2;171;178;191:0;38;2;171;178;191:0;38;2;50;184;201"
 # $SHELL names the shell that is running, not just the login shell.
 set -gx SHELL (status fish-path)
 if type -q eza
