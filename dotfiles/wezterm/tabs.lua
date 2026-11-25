@@ -1,13 +1,11 @@
 -- Tab bar behaviour and tab titles. Tab bar colours live in theme.lua.
 local wezterm = require 'wezterm'
 
--- The retro tab bar's "+" (new tab) button takes 3 cells at the end of the row.
-local NEW_TAB_BUTTON = 3
 local MIN_TAB_WIDTH = 6
 
--- This tab's share of the row: the window's width in cells, minus the new-tab
--- button, split evenly between the tabs; the first few take the leftover cells
--- so the row is filled exactly.
+-- This tab's share of the row: the window's width in cells split evenly
+-- between the tabs; the first few take the leftover cells so the row is filled
+-- exactly.
 local function share_of_row(tab, tab_count, fallback)
     local ok, size = pcall(function()
         return wezterm.mux.get_tab(tab.tab_id):get_size()
@@ -15,7 +13,7 @@ local function share_of_row(tab, tab_count, fallback)
     if not ok or not size or not size.cols then
         return fallback
     end
-    local row = size.cols - NEW_TAB_BUTTON
+    local row = size.cols
     local width = math.floor(row / tab_count)
     if tab.tab_index < row % tab_count then
         width = width + 1
@@ -28,6 +26,8 @@ local M = {}
 function M.apply_to_config(config)
     config.use_fancy_tab_bar = false
     config.hide_tab_bar_if_only_one_tab = true
+    -- No "+" button: tabs share the whole row (new tab is Cmd-Shift-T).
+    config.show_new_tab_button_in_tab_bar = false
     -- Tabs share the whole row (format-tab-title below sizes them), so only a
     -- generous cap here.
     config.tab_max_width = 512
