@@ -14,22 +14,22 @@ return {
         split = '#353a41',
         ansi = {
             '#262a30', -- black
-            '#fb598a', -- red
-            '#97cc70', -- green
+            '#ff4b81', -- red
+            '#8fd959', -- green
             '#f9df6f', -- yellow
-            '#6699ff', -- blue
-            '#df75fe', -- magenta
-            '#40bfcf', -- cyan
+            '#5c92ff', -- blue
+            '#dd6aff', -- magenta
+            '#25cbe0', -- cyan
             '#d7dae0', -- white
         },
         brights = {
             '#727781', -- black
-            '#f55a5a', -- red
-            '#97cc70', -- green
+            '#ff4646', -- red
+            '#8fd959', -- green
             '#f9df6f', -- yellow
-            '#6699ff', -- blue
-            '#8f00ab', -- magenta
-            '#40bfcf', -- cyan
+            '#5c92ff', -- blue
+            '#8600a1', -- magenta
+            '#25cbe0', -- cyan
             '#d7dae0', -- white
         },
         tab_bar = {

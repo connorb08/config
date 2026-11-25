@@ -35,17 +35,17 @@ cursor     = "#f8f8f0"   # editorCursor.foreground
 white      = "#ffffff"
 
 # ---- syntax and terminal colours
-red         = "#fb598a"  # keywords, storage, tags
-red_bright  = "#f55a5a"  # ansiBrightRed
-red_dark    = "#c94d45"  # editorError.foreground
-orange      = "#e79d58"  # function parameters
+red         = "#ff4b81"  # keywords, storage, tags
+red_bright  = "#ff4646"  # ansiBrightRed
+red_dark    = "#d9352a"  # editorError.foreground
+orange      = "#f59740"  # function parameters
 yellow      = "#f9df6f"  # strings
-green       = "#97cc70"  # functions, inherited classes
-cyan        = "#40bfcf"  # types, constants, JSON keys
-blue        = "#61b8ff"  # classes, variables, links
-blue_ansi   = "#6699ff"  # ansiBlue, badges and buttons
-purple      = "#df75fe"  # numbers, ansiMagenta
-purple_dark = "#8f00ab"  # ansiBrightMagenta
+green       = "#8fd959"  # functions, inherited classes
+cyan        = "#25cbe0"  # types, constants, JSON keys
+blue        = "#57b3ff"  # classes, variables, links
+blue_ansi   = "#5c92ff"  # ansiBlue, badges and buttons
+purple      = "#dd6aff"  # numbers, ansiMagenta
+purple_dark = "#8600a1"  # ansiBrightMagenta
 
 # ---- VS Code only (one-monokai-darker.json UI)
 bg_input         = "#0e0f13"  # dropdown.background, input.background
@@ -58,7 +58,7 @@ scrollbar_active = "#687083"  # scrollbarSlider.activeBackground
 title_inactive   = "#606670"  # titleBar.inactiveForeground
 list_highlight   = "#c5c5c5"  # list.highlightForeground
 badge_fg         = "#f8fafd"  # activityBarBadge.foreground
-teal             = "#0091af"  # diffEditor.insertedTextBackground (with alpha)
+teal             = "#0089a5"  # diffEditor.insertedTextBackground (with alpha)
 true_black       = "#000000"  # editorUnnecessaryCode.opacity (with alpha)
 
 # ---- from the theme's legacy token rules
