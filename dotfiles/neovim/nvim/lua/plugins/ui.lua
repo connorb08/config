@@ -55,6 +55,13 @@ return {
             ["@type.builtin"] = { fg = colors.cyan },
             ["@function.call"] = { fg = colors.fg },
             ["@function.method.call"] = { fg = colors.fg },
+            -- Config files: keys in the theme's JSON-property cyan (they were
+            -- plain text), TOML table headers in bold class blue
+            -- (after/queries/toml/highlights.scm marks them @type).
+            ["@property.toml"] = { fg = colors.cyan },
+            ["@property.json"] = { fg = colors.cyan },
+            ["@property.yaml"] = { fg = colors.cyan },
+            ["@type.toml"] = { fg = colors.aqua, bold = true },
           }
         end,
       })
