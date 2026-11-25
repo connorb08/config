@@ -37,7 +37,7 @@ $env.config.color_config = {
     shape_internalcall: { fg: $one_monokai_darker.green, attr: b }
     shape_external: $one_monokai_darker.red                  # a command that does not exist
     shape_external_resolved: { fg: $one_monokai_darker.green, attr: b }
-    shape_externalarg: $one_monokai_darker.foreground
+    shape_externalarg: $one_monokai_darker.yellow
     shape_keyword: $one_monokai_darker.pink
     shape_operator: $one_monokai_darker.pink
     shape_pipe: $one_monokai_darker.pink
@@ -52,7 +52,7 @@ $env.config.color_config = {
     shape_filepath: $one_monokai_darker.aqua
     shape_directory: $one_monokai_darker.aqua
     shape_globpattern: $one_monokai_darker.aqua
-    shape_flag: $one_monokai_darker.foreground   # flags in plain text, as in fish
+    shape_flag: $one_monokai_darker.yellow   # arguments and flags in yellow, as in fish and zsh
     shape_variable: $one_monokai_darker.aqua
     shape_vardecl: $one_monokai_darker.aqua
     shape_signature: { fg: $one_monokai_darker.green, attr: b }

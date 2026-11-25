@@ -47,6 +47,6 @@ ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=#da61fe'
 ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=#ff505e'
 ZSH_HIGHLIGHT_STYLES[redirection]='fg=#abb2bf'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=#abb2bf'
-ZSH_HIGHLIGHT_STYLES[default]='fg=#abb2bf'
+ZSH_HIGHLIGHT_STYLES[default]='fg=#f1bd5b'   # arguments, as in fish and Nushell
 ZSH_HIGHLIGHT_STYLES[cursor]='standout'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#676f7d'
