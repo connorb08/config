@@ -3,7 +3,7 @@
 let one_monokai_darker = {
     background: "#191c22", current_line: "#262c36", foreground: "#abb2bf", comment: "#676f7d"
     cyan: "#32b8c9", green: "#8cc761", orange: "#e49346", pink: "#ff505e", aqua: "#4dafff"
-    purple: "#da61fe", red: "#ff505e", yellow: "#f5d273"
+    purple: "#da61fe", red: "#ff505e", yellow: "#f7e187"
     invalid: "#c678dd", invalid_text: "#f8f8f0"
     search: "#344566"
 }
