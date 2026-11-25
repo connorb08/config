@@ -14,4 +14,5 @@ type = "gopass"
 # `fnox exec -- <command>` and `fnox get <NAME>`. `env = "exec"` keeps them
 # out of shells that use `fnox activate`.
 [secrets]
-# ARTIFACTORY_TOKEN = { provider = "gopass", value = "work/artifactory/token", env = "exec" }
+# NAME = { provider = "gopass", value = "<path in gopass>", env = "exec" }
+ARTIFACTORY_PASSWORD = { provider = "gopass", value = "work/artifactory/password", env = "exec", description = "Artifactory password" }
