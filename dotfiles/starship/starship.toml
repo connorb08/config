@@ -6,7 +6,7 @@
 # Line 1 is which shell this is, where you are (directory, git branch and
 # state), then on the right how long the last command took.
 # Line 2 is the prompt character, green or red for the last command's result.
-# The user and host appear only over SSH.
+# The OS logo and hostname lead the pill on every machine.
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = true
@@ -15,6 +15,8 @@ palette = "one_monokai_darker"
 
 format = """
 [](bg_panel)\
+$os\
+$hostname\
 $shell\
 $directory\
 [](fg:bg_panel bg:bg_accent)\
@@ -74,6 +76,40 @@ symbol = " "
 min_time = 2_000
 style = "muted"
 format = "[$duration]($style)"
+
+# Which machine: OS logo and hostname, first in the pill, then a thin divider.
+[os]
+disabled = false
+style = "bold fg bg:bg_panel"
+format = "[ $symbol ]($style)"
+
+[os.symbols]
+Macos = ""
+Linux = ""
+Windows = ""
+Ubuntu = ""
+Debian = ""
+Fedora = ""
+Arch = ""
+Alpine = ""
+NixOS = ""
+Raspbian = ""
+Manjaro = ""
+Pop = ""
+RedHatEnterprise = ""
+Redhat = ""
+CentOS = ""
+openSUSE = ""
+Gentoo = ""
+FreeBSD = ""
+AlmaLinux = ""
+RockyLinux = ""
+
+[hostname]
+ssh_only = false
+trim_at = "."
+style = "fg bg:bg_panel"
+format = "[$hostname ]($style)[](fg:muted bg:bg_panel)"
 
 # Which shell this prompt belongs to, inside the pill before the directory,
 # each in its own color; fish gets a
