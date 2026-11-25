@@ -108,6 +108,35 @@ if ($old_history | path exists) and not ($new_history | path exists) {
 }
 """
 
+# Tab completion for tools carapace has no completer for. Each tool writes its
+# own scripts: fish autoloads ~/.config/fish/completions, zsh adds the zsh
+# directory to fpath, bash sources the bash ones, and Nushell reaches the fish
+# ones through carapace's fish bridge (CARAPACE_BRIDGES in environment.nu).
+[tasks."setup:completions"]
+description = "Generate fish/zsh/bash completions for tools carapace does not cover"
+shell = "nu -c"
+run = '''
+# tool -> the subcommand that prints its completion script, before the shell name
+let generators = {gopass: [completion], fnox: [completion], yq: [completion], bws: [completions]}
+let targets = {
+    fish: {dir: ($nu.home-dir | path join ".config" "fish" "completions"), file: {|t| $"($t).fish" }}
+    zsh: {dir: ($nu.home-dir | path join ".local" "share" "zsh" "completions"), file: {|t| $"_($t)" }}
+    bash: {dir: ($nu.home-dir | path join ".local" "share" "bash" "completions"), file: {|t| $"($t).bash" }}
+}
+for tool in ($generators | columns) {
+    if (which $tool | is-empty) { continue }
+    for shell in ($targets | columns) {
+        let target = ($targets | get $shell)
+        let out = (^$tool ...($generators | get $tool) $shell | complete)
+        if $out.exit_code == 0 and ($out.stdout | is-not-empty) {
+            mkdir $target.dir
+            $out.stdout | save -f ($target.dir | path join (do $target.file $tool))
+        }
+    }
+}
+print $"completions: generated for (($generators | columns | where {|t| which $t | is-not-empty }) | str join ', ')"
+'''
+
 [tasks."setup:shell-aliases"]
 description = "Generate native shell aliases from the shared definition"
 run = 'nu --no-config-file "{{ config_root }}/../../../scripts/shell-aliases.nu" "{{ config_root }}/../../../dotfiles/shells/shared"'

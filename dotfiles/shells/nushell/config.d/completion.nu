@@ -39,3 +39,39 @@ $env.config.menus = ($env.config.menus | where name != completion_menu | append 
         selected_match_text: { fg: "#f1bd5b", bg: "#2c3340", attr: bu }
     }
 })
+
+# External commands: carapace first; for commands it has no completer for
+# (gopass, fnox, yq, bws) fish's, from the scripts `mise run setup:completions`
+# writes to ~/.config/fish/completions. carapace's own fish bridge cannot do
+# this: it runs fish with --no-config, which leaves that directory off the
+# completion path. When neither answers, Nushell completes file paths.
+# Set here, carapace's generated autoload keeps it instead of its own.
+$env.config.completions.external.enable = true
+$env.config.completions.external.completer = {|place|
+    let spans = (if ($place | describe) =~ "^record" { $place.command } else { $place })
+    # An alias completes as what it expands to: gco -> git checkout.
+    let expansion = (scope aliases | where name == ($spans | first) | get 0?.expansion?)
+    let spans = (if $expansion != null {
+        $spans | skip 1 | prepend ($expansion | str trim --left --char '^' | split row " ")
+    } else { $spans })
+    if ($spans | length) < 2 { return null }
+
+    let from_carapace = (if (which carapace | is-not-empty) {
+        try { with-env {CARAPACE_SHELL: nushell} { ^carapace ($spans | first) nushell ...$spans | from json } } catch { null }
+        # carapace reports failures (say, git outside a repository) as ERR entries.
+        | default [] | where {|c| $c.value !~ '^ERR\d*$' }
+    })
+    if ($from_carapace | is-not-empty) { return $from_carapace }
+
+    # Only commands with a generated fish script; for anything else fish would
+    # just list files, which Nushell's own path completion does better.
+    let script = ($nu.home-dir | path join ".config" "fish" "completions" $"($spans | first).fish")
+    if (which fish | is-empty) or not ($script | path exists) { return null }
+    let from_fish = (with-env {NU_COMPLETE_LINE: ($spans | str join " ")} {
+        ^fish --no-config --command 'set -p fish_complete_path ~/.config/fish/completions; complete --do-complete "$NU_COMPLETE_LINE"'
+    } | lines | where $it != "" | each {|line|
+        let parts = ($line | split row "\t")
+        {value: ($parts | first), description: ($parts | get 1? | default "")}
+    })
+    if ($from_fish | is-empty) { null } else { $from_fish }
+}
