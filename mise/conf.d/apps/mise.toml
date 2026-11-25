@@ -52,6 +52,14 @@ variants = [
   { os = "windows", target = "~/AppData/Roaming/yazi/config/theme.toml" },
 ]
 
+[dotfiles."yazi/keymap.toml"]
+source = "../../../dotfiles/yazi/keymap.toml"
+mode = "symlink"
+variants = [
+  { os = "unix", target = "~/.config/yazi/keymap.toml" },
+  { os = "windows", target = "~/AppData/Roaming/yazi/config/keymap.toml" },
+]
+
 [dotfiles."yazi/flavors/one-monokai-darker.yazi"]
 source = "../../../dotfiles/yazi/flavors/one-monokai-darker.yazi"
 mode = "symlink"
