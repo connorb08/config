@@ -1,0 +1,53 @@
+# One Monokai Darker: the one place every tool's colours come from.
+#
+# Templates under templates/ name these colours instead of writing hex values:
+#   {{ yellow }}       -> #f1bd5b      (most configs)
+#   {{ yellow.bare }}  -> f1bd5b       (fish themes)
+#   {{ yellow.rgb }}   -> 241;189;91   (terminal escape codes, e.g. JQ_COLORS)
+# scripts/palette.nu renders them into the real files under dotfiles/. Change a
+# colour here and run `mise run palette`; the dotfiles sync does it too.
+#
+# Values come from the VS Code theme (connorb08/themes, one-monokai-darker.json);
+# the setting each one is used for there is noted.
+
+[colors]
+# ---- backgrounds, darkest to lightest
+bg_darkest = "#0d0f12"   # editorGroup.border, tab.border
+bg_dark    = "#13161b"   # sideBar, statusBar, inactive tabs
+bg         = "#191c22"   # editor.background
+hover      = "#222730"   # list.activeSelectionBackground
+line       = "#262c36"   # editor.lineHighlight, active tab
+selection  = "#2c3340"   # editor.selectionBackground
+search     = "#344566"   # editor.findMatchBackground
+
+# ---- text and UI greys
+fg         = "#abb2bf"   # terminal.foreground, ordinary text
+fg_bright  = "#d7dae0"   # selected list items, ansiWhite
+fg_dim     = "#9da5b4"   # statusBar.foreground
+comment    = "#676f7d"   # comments
+grey       = "#7f848e"   # ansiBrightBlack
+scrollbar  = "#4e5666"   # scrollbarSlider
+gutter     = "#495162"   # editorLineNumber.foreground
+whitespace = "#484a50"   # editorWhitespace.foreground
+border     = "#3b4048"   # editorIndentGuide, pane borders
+black      = "#2d3139"   # ansiBlack
+cursor     = "#f8f8f0"   # editorCursor.foreground
+white      = "#ffffff"
+
+# ---- syntax and terminal colours
+red         = "#ff505e"  # keywords, storage, tags
+red_bright  = "#f44747"  # ansiBrightRed
+red_dark    = "#c24038"  # editorError.foreground
+orange      = "#e49346"  # function parameters
+yellow      = "#f1bd5b"  # strings
+green       = "#8cc761"  # functions, inherited classes
+cyan        = "#32b8c9"  # types, constants, JSON keys
+blue        = "#4dafff"  # classes, variables, links
+blue_ansi   = "#528bff"  # ansiBlue, badges and buttons
+purple      = "#da61fe"  # numbers, ansiMagenta
+purple_dark = "#7e0097"  # ansiBrightMagenta
+
+# ---- from the theme's legacy token rules
+invalid            = "#c678dd"
+invalid_deprecated = "#56b6c2"
+diff_header        = "#75715e"
