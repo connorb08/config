@@ -1,0 +1,10 @@
+[user]
+name = "Connor Bray"
+email = "connor@connorbray.net"
+
+[ui]
+default-command = "log"
+editor = "nvim"
+# delta needs git-style diffs
+pager = "delta"
+diff-formatter = ":git"

@@ -1,0 +1,28 @@
+optional = ["ls", "ll", "la", "lt", "cat", "grep", "find"]
+
+[aliases]
+ls = ["eza", "--icons=auto", "--group-directories-first"]
+ll = ["eza", "-l", "--icons=auto", "--group-directories-first", "--git"]
+la = ["eza", "-la", "--icons=auto", "--group-directories-first", "--git"]
+lt = ["eza", "--tree", "--level=2", "--icons=auto", "--group-directories-first"]
+cat = ["bat", "--paging=never"]
+grep = ["rg"]
+find = ["fd"]
+o = ["nvim"]
+g = ["git"]
+python = ["python3"]
+pip = ["pip3"]
+".." = ["cd", ".."]
+"..." = ["cd", "../.."]
+
+[fish]
+abbreviations = ["o", "g"]
+excluded = ["..", "..."]
+
+[nushell]
+excluded = ["ls", "find", "python", "pip", "..", "..."]
+native = ["ll", "la"]
+
+[nushell.overrides]
+ll = ["ls", "-l"]
+la = ["ls", "-la"]

@@ -1,0 +1,43 @@
+-- The colour scheme. appearance.lua registers it under `name`.
+return {
+    name = 'One Monokai Darker',
+    colors = {
+        foreground = '#abb2bf',
+        background = '#191c22',
+        cursor_bg = '#f8f8f0',
+        cursor_fg = '#191c22',
+        cursor_border = '#f8f8f0',
+        selection_bg = '#2c3340',
+        selection_fg = '#d7dae0',
+        scrollbar_thumb = '#4e5666',
+        split = '#3b4048',
+        ansi = {
+            '#2d3139', -- black
+            '#ff505e', -- red
+            '#8cc761', -- green
+            '#f1bd5b', -- yellow
+            '#528bff', -- blue
+            '#da61fe', -- magenta
+            '#32b8c9', -- cyan
+            '#d7dae0', -- white
+        },
+        brights = {
+            '#7f848e', -- black
+            '#f44747', -- red
+            '#8cc761', -- green
+            '#f1bd5b', -- yellow
+            '#528bff', -- blue
+            '#7e0097', -- magenta
+            '#32b8c9', -- cyan
+            '#d7dae0', -- white
+        },
+        tab_bar = {
+            background = '#13161b',
+            active_tab = { bg_color = '#262c36', fg_color = '#d7dae0' },
+            inactive_tab = { bg_color = '#13161b', fg_color = '#9da5b4' },
+            inactive_tab_hover = { bg_color = '#222730', fg_color = '#d7dae0' },
+            new_tab = { bg_color = '#13161b', fg_color = '#9da5b4' },
+            new_tab_hover = { bg_color = '#222730', fg_color = '#d7dae0' },
+        },
+    },
+}

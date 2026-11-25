@@ -1,0 +1,9 @@
+# Linked to ~/.config/zsh/zshrc; machine-specific settings stay in ~/.zshrc.
+source ~/.config/shell/path.sh
+command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
+
+for __dotfiles_zsh_module in history completion keys integrations plugins; do
+  source "$HOME/.config/zsh/config.d/$__dotfiles_zsh_module.zsh"
+done
+unset __dotfiles_zsh_module
+source ~/.config/shell/common.sh

@@ -1,0 +1,16 @@
+# bat and delta share bat's compiled syntax/theme cache.
+[dotfiles]
+"~/.config/eza/theme.yml" = { source = "../../../dotfiles/eza/theme.yml", mode = "symlink" }
+"~/.config/starship.toml" = { source = "../../../dotfiles/starship/starship.toml", mode = "symlink" }
+
+[dotfiles."bat/themes/One Monokai Darker.tmTheme"]
+source = "../../../dotfiles/yazi/flavors/one-monokai-darker.yazi/tmtheme.xml"
+mode = "symlink"
+variants = [
+  { os = "unix", target = "~/.config/bat/themes/One Monokai Darker.tmTheme" },
+  { os = "windows", target = "~/AppData/Roaming/bat/themes/One Monokai Darker.tmTheme" },
+]
+
+[tasks."setup:bat"]
+description = "Build the bat/delta cache with One Monokai Darker"
+run = "bat cache --build"

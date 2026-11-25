@@ -1,0 +1,69 @@
+# The whole directory is linked, so lazy-lock.json (the pinned plugin
+# versions lazy.nvim writes) lands in this repository.
+[dotfiles."nvim"]
+source = "../../../dotfiles/neovim/nvim"
+mode = "symlink"
+variants = [
+  { os = "unix", target = "~/.config/nvim" },
+  { os = "windows", target = "~/AppData/Local/nvim" },
+]
+
+# Installs the plugins at the versions in lazy-lock.json, so the first launch
+# is ready. Without this they install on first launch instead.
+[tasks."setup:neovim"]
+description = "Install the Neovim plugins pinned in lazy-lock.json"
+run = 'nvim --headless "+Lazy! restore" +qa'
+
+[dotfiles."~/.config/wezterm"]
+source = "../../../dotfiles/wezterm"
+mode = "symlink"
+
+[dotfiles."~/.tmux.conf"]
+source = "../../../dotfiles/tmux/tmux.conf"
+mode = "symlink"
+variants = [{ os = "unix" }]
+
+[bootstrap.packages]
+"brew-cask:wezterm@nightly" = { os = "macos" }
+"scoop:versions/wezterm-nightly" = { os = "windows" }
+
+[dotfiles."yazi/theme.toml"]
+source = "../../../dotfiles/yazi/theme.toml"
+mode = "symlink"
+variants = [
+  { os = "unix", target = "~/.config/yazi/theme.toml" },
+  { os = "windows", target = "~/AppData/Roaming/yazi/config/theme.toml" },
+]
+
+[dotfiles."yazi/flavors/one-monokai-darker.yazi"]
+source = "../../../dotfiles/yazi/flavors/one-monokai-darker.yazi"
+mode = "symlink"
+variants = [
+  { os = "unix", target = "~/.config/yazi/flavors/one-monokai-darker.yazi" },
+  { os = "windows", target = "~/AppData/Roaming/yazi/config/flavors/one-monokai-darker.yazi" },
+]
+
+# k9s rewrites config.yaml: copy it, but link the aliases and skin.
+[dotfiles."k9s/config.yaml"]
+source = "../../../dotfiles/k9s/config.yaml"
+mode = "copy"
+variants = [
+  { os = "unix", target = "~/.config/k9s/config.yaml" },
+  { os = "windows", target = "~/AppData/Local/k9s/config.yaml" },
+]
+
+[dotfiles."k9s/aliases.yaml"]
+source = "../../../dotfiles/k9s/aliases.yaml"
+mode = "symlink"
+variants = [
+  { os = "unix", target = "~/.config/k9s/aliases.yaml" },
+  { os = "windows", target = "~/AppData/Local/k9s/aliases.yaml" },
+]
+
+[dotfiles."k9s/skins/one-monokai-darker.yaml"]
+source = "../../../dotfiles/k9s/skins/one-monokai-darker.yaml"
+mode = "symlink"
+variants = [
+  { os = "unix", target = "~/.config/k9s/skins/one-monokai-darker.yaml" },
+  { os = "windows", target = "~/AppData/Local/k9s/skins/one-monokai-darker.yaml" },
+]

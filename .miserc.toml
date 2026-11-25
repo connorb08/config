@@ -1,0 +1,15 @@
+# No auto_env: it stops `mise lock` from seeing the project's tools. OS-specific
+# entries use `variants = [{ os = "..." }]` instead of mise.<os>.toml files.
+env_conf_d = true
+# Custom filenames replace discovery defaults, including base conf.d files.
+# tools.toml must be listed (not only included from mise.toml) for `mise lock`.
+override_config_filenames = [
+  "mise.toml",
+  "mise/conf.d/apps/mise.toml",
+  "mise/conf.d/cli/mise.toml",
+  "mise/conf.d/secrets/mise.toml",
+  "mise/conf.d/shells/mise.toml",
+  "mise/conf.d/vc/mise.toml",
+  "tools.toml",
+  "mise.local.toml",
+]

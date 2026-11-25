@@ -1,0 +1,4 @@
+# Colours match the One Monokai Darker palette in WezTerm and Starship.
+[flavor]
+dark = "one-monokai-darker"
+light = "one-monokai-darker"

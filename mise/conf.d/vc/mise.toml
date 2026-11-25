@@ -1,0 +1,19 @@
+[dotfiles]
+"~/.config/git/config" = { source = "../../../dotfiles/vc/gitconfig", mode = "symlink" }
+"~/.gitconfig-work" = { source = "../../../dotfiles/vc/gitconfig-work", mode = "symlink" }
+
+[dotfiles."jj/config.toml"]
+source = "../../../dotfiles/vc/jj.toml"
+mode = "symlink"
+variants = [
+  { os = "unix", target = "~/.config/jj/config.toml" },
+  { os = "windows", target = "~/AppData/Roaming/jj/config.toml" },
+]
+
+[dotfiles."gh/config.yml"]
+source = "../../../dotfiles/vc/gh-config.yml"
+mode = "symlink"
+variants = [
+  { os = "unix", target = "~/.config/gh/config.yml" },
+  { os = "windows", target = "~/AppData/Roaming/GitHub CLI/config.yml" },
+]

@@ -1,0 +1,16 @@
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx PAGER less
+set -gx LESS -FRX
+# Silences macOS bash's "default shell is now zsh" notice in any bash started from here.
+set -gx BASH_SILENCE_DEPRECATION_WARNING 1
+# $SHELL names the shell that is running, not just the login shell.
+set -gx SHELL (status fish-path)
+if type -q eza
+    set -gx EZA_CONFIG_DIR $HOME/.config/eza
+end
+if type -q bat
+    set -gx BAT_THEME "One Monokai Darker"
+    set -gx MANPAGER "sh -c 'col -bx | bat --language=man --plain'"
+    set -gx MANROFFOPT -c
+end

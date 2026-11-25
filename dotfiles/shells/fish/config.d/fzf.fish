@@ -1,0 +1,11 @@
+if type -q fzf
+    set -gx FZF_DEFAULT_OPTS '--height=40% --layout=reverse --border --color=fg:#abb2bf,bg:#191c22,hl:#da61fe,fg+:#abb2bf,bg+:#262c36,hl+:#da61fe,info:#f1bd5b,prompt:#8cc761,pointer:#ff505e,marker:#ff505e,spinner:#f1bd5b,header:#676f7d'
+    if type -q fd
+        set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
+        set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+        set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git'
+    end
+    type -q bat; and set -gx FZF_CTRL_T_OPTS "--preview 'bat --color=always --style=numbers --line-range=:200 {}'"
+    type -q eza; and set -gx FZF_ALT_C_OPTS "--preview 'eza --tree --level=2 --color=always {}'"
+    fzf --fish | source
+end

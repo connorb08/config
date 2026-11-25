@@ -1,0 +1,103 @@
+# One Monokai Darker, adapted from https://github.com/eza-community/eza-themes/blob/main/themes/dracula.yml
+colourful: true
+
+filekinds:
+  normal: {foreground: "#abb2bf"}
+  directory: {foreground: "#32b8c9"}
+  symlink: {foreground: "#da61fe"}
+  pipe: {foreground: "#676f7d"}
+  block_device: {foreground: "#ff505e"}
+  char_device: {foreground: "#ff505e"}
+  socket: {foreground: "#262c36"}
+  special: {foreground: "#ff505e"}
+  executable: {foreground: "#8cc761"}
+  mount_point: {foreground: "#f1bd5b"}
+
+perms:
+  user_read: {foreground: "#abb2bf"}
+  user_write: {foreground: "#f1bd5b"}
+  user_execute_file: {foreground: "#8cc761"}
+  user_execute_other: {foreground: "#8cc761"}
+  group_read: {foreground: "#abb2bf"}
+  group_write: {foreground: "#f1bd5b"}
+  group_execute: {foreground: "#8cc761"}
+  other_read: {foreground: "#abb2bf"}
+  other_write: {foreground: "#f1bd5b"}
+  other_execute: {foreground: "#8cc761"}
+  special_user_file: {foreground: "#ff505e"}
+  special_other: {foreground: "#676f7d"}
+  attribute: {foreground: "#abb2bf"}
+
+size:
+  major: {foreground: "#f1bd5b"}
+  minor: {foreground: "#da61fe"}
+  number_byte: {foreground: "#abb2bf"}
+  number_kilo: {foreground: "#abb2bf"}
+  number_mega: {foreground: "#32b8c9"}
+  number_giga: {foreground: "#ff505e"}
+  number_huge: {foreground: "#ff505e"}
+  unit_byte: {foreground: "#abb2bf"}
+  unit_kilo: {foreground: "#32b8c9"}
+  unit_mega: {foreground: "#ff505e"}
+  unit_giga: {foreground: "#ff505e"}
+  unit_huge: {foreground: "#f1bd5b"}
+
+users:
+  user_you: {foreground: "#abb2bf"}
+  user_root: {foreground: "#ff505e"}
+  user_other: {foreground: "#ff505e"}
+  group_yours: {foreground: "#abb2bf"}
+  group_other: {foreground: "#676f7d"}
+  group_root: {foreground: "#ff505e"}
+
+links:
+  normal: {foreground: "#da61fe"}
+  multi_link_file: {foreground: "#f1bd5b"}
+
+git:
+  new: {foreground: "#8cc761"}
+  modified: {foreground: "#f1bd5b"}
+  deleted: {foreground: "#ff505e"}
+  renamed: {foreground: "#32b8c9"}
+  typechange: {foreground: "#ff505e"}
+  ignored: {foreground: "#676f7d"}
+  conflicted: {foreground: "#ff505e"}
+
+git_repo:
+  branch_main: {foreground: "#abb2bf"}
+  branch_other: {foreground: "#ff505e"}
+  git_clean: {foreground: "#8cc761"}
+  git_dirty: {foreground: "#ff505e"}
+
+security_context:
+  colon: {foreground: "#676f7d"}
+  user: {foreground: "#abb2bf"}
+  role: {foreground: "#ff505e"}
+  typ: {foreground: "#676f7d"}
+  range: {foreground: "#ff505e"}
+
+file_type:
+  image: {foreground: "#f1bd5b"}
+  video: {foreground: "#ff505e"}
+  music: {foreground: "#8cc761"}
+  lossless: {foreground: "#8cc761"}
+  crypto: {foreground: "#676f7d"}
+  document: {foreground: "#abb2bf"}
+  compressed: {foreground: "#ff505e"}
+  temp: {foreground: "#ff505e"}
+  compiled: {foreground: "#32b8c9"}
+  build: {foreground: "#676f7d"}
+  source: {foreground: "#32b8c9"}
+
+punctuation: {foreground: "#676f7d"}
+date: {foreground: "#f1bd5b"}
+inode: {foreground: "#abb2bf"}
+blocks: {foreground: "#abb2bf"}
+header: {foreground: "#abb2bf"}
+octal: {foreground: "#8cc761"}
+flags: {foreground: "#ff505e"}
+
+symlink_path: {foreground: "#da61fe"}
+control_char: {foreground: "#32b8c9"}
+broken_symlink: {foreground: "#ff505e"}
+broken_path_overlay: {foreground: "#676f7d"}

@@ -1,0 +1,71 @@
+include = ["tools.toml"]
+
+[settings]
+experimental = true
+install_layout = "identity"
+dotfiles.root = "./dotfiles"
+registry_floating = true
+
+[tool_config]
+locked = true
+
+# A copy of tools.toml as the global config, so the pinned tools (zoxide,
+# starship, ...) stay on PATH outside this checkout; shell hooks call them from
+# every directory. Not a symlink: mise then treats tools.toml as global config
+# and `mise lock` finds no project tools. Rerun `mise dot apply` after editing it.
+[dotfiles."~/.config/mise/config.toml"]
+source = "tools.toml"
+mode = "copy"
+
+# ---------------------------------------------------------------- bootstrap
+
+# System packages, installed with whatever package manager the OS has. Prefix
+# a name to pick one ("brew-cask:...", "apt:...", "winget:..."), and add
+# `os = "..."` or `env = "work"` to limit an entry. macOS already ships git and zsh.
+[bootstrap.packages]
+git = { os = "linux" }
+zsh = { os = "linux" }
+fish = { os = ["macos", "linux"] }
+build-essential = { os = "linux" } # C compiler for Neovim's tree-sitter parsers
+"winget:Git.Git" = { os = "windows" }
+
+# Tools go into the system-wide directory (/usr/local/share/mise/installs), so
+# every user on the machine shares one copy; mise asks for sudo to publish
+# them. mise only does that for backends that download a prebuilt binary, so
+# the list is filtered to those. The `tools` step that follows installs
+# whatever is left per user: tools on other backends (eza), and everything on
+# Windows, where mise never elevates.
+#
+# After adding a tool, run `mise bootstrap --only tools`.
+[bootstrap.hooks.pre-tools]
+description = "Install tools system-wide"
+run = """
+tools=$(mise ls --current -b aqua -b github -b gitlab -b forgejo -b http -b s3 | awk '{ print $1 }')
+if [ -n "$tools" ]; then
+  mise install --system $tools
+  mise reshim --system
+fi
+"""
+run_windows = "mise install"
+
+# Runs at the end of every `mise bootstrap`. Each conf.d/<group>/ fragment can
+# add a `setup:<tool>` task for steps a file cannot express.
+[tasks.bootstrap]
+description = "Per-tool setup steps"
+depends = ["setup:*"]
+
+# ---------------------------------------------------------------- sync
+
+# Automatic sync is opt-in: its service is declared only in mise.sync.toml.
+
+[tasks."dotfiles:sync"]
+description = "Commit dotfile changes, pull, and push"
+run = 'nu --no-config-file "{{ config_root }}/scripts/dotfiles-sync.nu" "{{ config_root }}"'
+
+[tasks."dotfiles:autosync"]
+description = "Run dotfiles:sync every 10 minutes (the dotfiles-sync service)"
+run = 'nu --no-config-file "{{ config_root }}/scripts/dotfiles-autosync.nu" "{{ config_root }}" "{{ mise_bin }}"'
+
+# Files that applications rewrite themselves (editor settings and the like)
+# can be tracked in place with `mise dot track <path>` and synced through a
+# separate private repository. Declare its opt-in service in mise.sync.toml.

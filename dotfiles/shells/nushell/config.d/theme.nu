@@ -1,0 +1,68 @@
+# ---- colours: One Monokai Darker, matching WezTerm and Starship
+let one_monokai_darker = {
+    background: "#191c22", current_line: "#262c36", foreground: "#abb2bf", comment: "#676f7d"
+    cyan: "#32b8c9", green: "#8cc761", orange: "#e49346", pink: "#ff505e", aqua: "#4dafff"
+    purple: "#da61fe", red: "#ff505e", yellow: "#f1bd5b"
+    invalid: "#c678dd", invalid_text: "#f8f8f0"
+    search: "#344566"
+}
+$env.config.color_config = {
+    separator: $one_monokai_darker.comment
+    leading_trailing_space_bg: { attr: n }
+    header: { fg: $one_monokai_darker.green, attr: b }
+    row_index: { fg: $one_monokai_darker.comment, attr: b }
+    empty: $one_monokai_darker.comment
+    hints: $one_monokai_darker.comment
+    search_result: { fg: $one_monokai_darker.foreground, bg: $one_monokai_darker.search }
+
+    # values in tables
+    bool: $one_monokai_darker.cyan
+    int: $one_monokai_darker.purple
+    float: $one_monokai_darker.purple
+    filesize: $one_monokai_darker.cyan
+    duration: $one_monokai_darker.cyan
+    datetime: $one_monokai_darker.orange
+    range: $one_monokai_darker.foreground
+    string: $one_monokai_darker.foreground
+    nothing: $one_monokai_darker.comment
+    binary: $one_monokai_darker.pink
+    cell-path: $one_monokai_darker.foreground
+    record: $one_monokai_darker.foreground
+    list: $one_monokai_darker.foreground
+    closure: $one_monokai_darker.cyan
+    glob: $one_monokai_darker.cyan
+    block: $one_monokai_darker.foreground
+
+    # the command line as you type
+    shape_internalcall: { fg: $one_monokai_darker.green, attr: b }
+    shape_external: $one_monokai_darker.red                  # a command that does not exist
+    shape_external_resolved: { fg: $one_monokai_darker.green, attr: b }
+    shape_externalarg: $one_monokai_darker.foreground
+    shape_keyword: $one_monokai_darker.pink
+    shape_operator: $one_monokai_darker.pink
+    shape_pipe: $one_monokai_darker.pink
+    shape_redirection: $one_monokai_darker.pink
+    shape_string: $one_monokai_darker.yellow
+    shape_string_interpolation: $one_monokai_darker.yellow
+    shape_raw_string: $one_monokai_darker.yellow
+    shape_int: $one_monokai_darker.purple
+    shape_float: $one_monokai_darker.purple
+    shape_bool: $one_monokai_darker.purple
+    shape_datetime: $one_monokai_darker.orange
+    shape_filepath: $one_monokai_darker.cyan
+    shape_directory: $one_monokai_darker.cyan
+    shape_globpattern: $one_monokai_darker.cyan
+    shape_flag: $one_monokai_darker.orange
+    shape_variable: $one_monokai_darker.aqua
+    shape_vardecl: $one_monokai_darker.aqua
+    shape_signature: { fg: $one_monokai_darker.green, attr: b }
+    shape_record: $one_monokai_darker.foreground
+    shape_list: $one_monokai_darker.foreground
+    shape_table: $one_monokai_darker.foreground
+    shape_block: $one_monokai_darker.foreground
+    shape_closure: $one_monokai_darker.cyan
+    shape_nothing: $one_monokai_darker.comment
+    shape_garbage: { fg: $one_monokai_darker.invalid_text, bg: $one_monokai_darker.invalid, attr: b }
+    shape_matching_brackets: { attr: u }
+}
+

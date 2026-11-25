@@ -1,0 +1,42 @@
+[user]
+    name = Connor Bray
+	email = connor@connorbray.net
+	signingkey = 489946A58F94F8CB
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[url "git@github.com:"]
+    pushInsteadOf = https://github.com/
+
+[commit]
+	gpgsign = true
+
+[init]
+	defaultBranch = main
+
+[core]
+    pager = "if command -v delta >/dev/null 2>&1; then delta; else less -FRX; fi"
+
+[interactive]
+    diffFilter = "if command -v delta >/dev/null 2>&1; then delta --color-only; else cat; fi"
+
+[delta]
+    syntax-theme = One Monokai Darker
+    navigate = true
+    line-numbers = true
+
+[merge]
+    conflictStyle = zdiff3
+
+[init]
+    defaultBranch = main
+
+[push]
+    autoSetupRemote = true
+
+[includeIf "hasconfig:remote.*.url:git@github.com:tyler-technologies/**"]
+    path = ~/.gitconfig-work

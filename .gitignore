@@ -1,0 +1,68 @@
+# ---------------------------------------------------------------- secrets
+# Secret values live in the gopass store (see mise/conf.d/secrets) and are
+# handed out by fnox at run time; none belong in this repository.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.kdbx
+*.agekey
+keys.txt
+id_rsa*
+id_ecdsa*
+id_ed25519*
+!*.pub
+.netrc
+.npmrc
+.pypirc
+credentials
+credentials.json
+*.credentials
+# gh keeps its token in hosts.yml next to config.yml; only config.yml is managed.
+hosts.yml
+# fnox / gopass files a machine may create locally.
+fnox.local.toml
+.gopass-local*
+
+# ---------------------------------------------------------------- per-machine
+# mise.local.toml, mise.<env>.local.toml and their lockfiles.
+*.local.toml
+*.local.lock
+.mise.local.*
+
+# ---------------------------------------------------------------- written by apps
+# ~/.config/nvim and ~/.config/wezterm link to whole directories here, so
+# anything those apps write there lands in the repo. lazy-lock.json is kept on
+# purpose: it pins the plugin versions.
+dotfiles/neovim/nvim/spell/
+dotfiles/neovim/nvim/.netrwhist
+dotfiles/neovim/nvim/lazyvim.json
+dotfiles/neovim/nvim/.luarc.json
+*.spl
+*.sug
+
+# ---------------------------------------------------------------- OS and editors
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+\#*\#
+
+# ---------------------------------------------------------------- scratch
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej
+tmp/
+.cache/
+__pycache__/
+node_modules/

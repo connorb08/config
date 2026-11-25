@@ -1,0 +1,3 @@
+command -v fzf >/dev/null 2>&1 && eval "$(fzf --bash)"
+command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init bash)"
+command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"

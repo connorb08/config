@@ -1,0 +1,118 @@
+# bash, zsh and fish (macOS/Linux). Each entry carries `variants = [{ os = "unix" }]`
+# rather than living in a mise.unix.toml, because loading that file needs
+# `auto_env`, and `auto_env` stops `mise lock` from seeing the project's tools.
+# Installer-managed startup files are kept; only their managed blocks are edited.
+[dotfiles."~/.config/bash/bashrc"]
+source = "../../../dotfiles/shells/bash/bashrc.sh"
+mode = "symlink"
+variants = [{ os = "unix" }]
+
+[dotfiles."~/.config/bash/bashrc.d"]
+source = "../../../dotfiles/shells/bash/bashrc.d"
+mode = "symlink-each"
+variants = [{ os = "unix" }]
+
+[dotfiles."~/.config/zsh/zshrc"]
+source = "../../../dotfiles/shells/zsh/zshrc"
+mode = "symlink"
+variants = [{ os = "unix" }]
+
+[dotfiles."~/.config/zsh/config.d"]
+source = "../../../dotfiles/shells/zsh/config.d"
+mode = "symlink-each"
+variants = [{ os = "unix" }]
+
+[dotfiles."~/.config/fish/conf.d/dotfiles.fish"]
+source = "../../../dotfiles/shells/fish/dotfiles.fish"
+mode = "symlink"
+variants = [{ os = "unix" }]
+
+[dotfiles."~/.config/fish/dotfiles"]
+source = "../../../dotfiles/shells/fish/config.d"
+mode = "symlink-each"
+variants = [{ os = "unix" }]
+
+[dotfiles."~/.config/fish/themes/One Monokai Darker.theme"]
+source = "../../../dotfiles/shells/fish/one-monokai-darker.theme"
+mode = "symlink"
+variants = [{ os = "unix" }]
+
+[dotfiles."~/.bashrc/dotfiles"]
+block = '''
+[ -r ~/.config/bash/bashrc ] && . ~/.config/bash/bashrc
+'''
+os = "unix"
+
+[dotfiles."~/.bash_profile/dotfiles"]
+block = '''
+[ -r ~/.config/bash/bashrc ] && . ~/.config/bash/bashrc
+'''
+os = "unix"
+
+[dotfiles."~/.zshrc/dotfiles"]
+block = '''
+[ -r ~/.config/zsh/zshrc ] && source ~/.config/zsh/zshrc
+'''
+os = "unix"
+
+# Repos cannot be limited by OS; on Windows these clones are simply unused.
+[bootstrap.repos]
+"~/.local/share/zsh/plugins/zsh-autosuggestions" = { url = "https://github.com/zsh-users/zsh-autosuggestions.git", depth = 1 }
+"~/.local/share/zsh/plugins/zsh-syntax-highlighting" = { url = "https://github.com/zsh-users/zsh-syntax-highlighting.git", depth = 1 }
+
+# Nushell reads its config from a different directory on each OS. macOS gets
+# both: ~/.config/nushell is used when XDG_CONFIG_HOME is set, and
+# ~/Library/Application Support/nushell when it is not.
+[dotfiles."~/.config/nushell"]
+source = "../../../dotfiles/shells/nushell"
+mode = "symlink-each"
+variants = [{ os = "unix" }]
+
+[dotfiles."~/Library/Application Support/nushell"]
+source = "../../../dotfiles/shells/nushell"
+mode = "symlink-each"
+variants = [{ os = "macos" }]
+
+[dotfiles."~/AppData/Roaming/nushell"]
+source = "../../../dotfiles/shells/nushell"
+mode = "symlink-each"
+variants = [{ os = "windows" }]
+
+[tasks."setup:nushell"]
+description = "Generate the integrations nushell autoloads, and migrate history to sqlite"
+depends = ["setup:shell-aliases"]
+shell = "nu -c"
+run = """
+let autoload_dir = ($nu.data-dir | path join "vendor/autoload")
+mkdir $autoload_dir
+
+# Generate Starship integration (automatically loaded by Nushell)
+starship init nu | save -f ($autoload_dir | path join "starship.nu")
+
+# Generate mise activation in the same autoload directory
+mise activate nu | save -f ($autoload_dir | path join "mise.nu")
+
+# zoxide: `z <dir>` jumps to a directory you have visited, `zi` picks one
+zoxide init nushell | save -f ($autoload_dir | path join "zoxide.nu")
+
+# carapace: completions for external commands (git, kubectl, gh, ...)
+carapace _carapace nushell | save -f ($autoload_dir | path join "carapace.nu")
+
+# One time only: copy the old plain-text history into the sqlite history that
+# config.nu now uses. history.txt is left in place.
+let history_dir = ($nu.history-path | path dirname)
+let old_history = ($history_dir | path join "history.txt")
+let new_history = ($history_dir | path join "history.sqlite3")
+if ($old_history | path exists) and not ($new_history | path exists) {
+    ^$nu.current-exe --config ($nu.default-config-dir | path join "config.nu") -c "history import"
+    print $"nushell: imported ($old_history) into ($new_history)"
+}
+"""
+
+[tasks."setup:shell-aliases"]
+description = "Generate native shell aliases from the shared definition"
+run = 'nu --no-config-file "{{ config_root }}/../../../scripts/shell-aliases.nu" "{{ config_root }}/../../../dotfiles/shells/shared"'
+[dotfiles."~/.config/shell"]
+source = "../../../dotfiles/shells/shared"
+mode = "symlink-each"
+
