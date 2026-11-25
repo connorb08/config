@@ -6,16 +6,16 @@
 
 # Styles...
 foreground: &foreground "#abb2bf"
-background: &background "#191c22"
-current_line: &current_line "#262c36"
-selection: &selection "#2c3340"
-comment: &comment "#676f7d"
-cyan: &cyan "#32b8c9"
-green: &green "#8cc761"
-orange: &orange "#e49346"
-pink: &pink "#ff505e"
-purple: &purple "#da61fe"
-red: &red "#ff505e"
+background: &background "#15181d"
+current_line: &current_line "#20252e"
+selection: &selection "#252b36"
+comment: &comment "#656d7a"
+cyan: &cyan "#40bfcf"
+green: &green "#97cc70"
+orange: &orange "#e79d58"
+pink: &pink "#fb598a"
+purple: &purple "#df75fe"
+red: &red "#fb598a"
 yellow: &yellow "#f7e187"
 
 # Skin...

@@ -12,53 +12,53 @@
 
 [colors]
 # ---- backgrounds, darkest to lightest
-bg_darkest = "#0d0f12"   # editorGroup.border, tab.border
-bg_dark    = "#13161b"   # sideBar, statusBar, inactive tabs
-bg         = "#191c22"   # editor.background
-hover      = "#222730"   # list.activeSelectionBackground
-line       = "#262c36"   # editor.lineHighlight, active tab
-selection  = "#2c3340"   # editor.selectionBackground
-search     = "#344566"   # editor.findMatchBackground
+bg_darkest = "#0b0d0f"   # editorGroup.border, tab.border
+bg_dark    = "#101317"   # sideBar, statusBar, inactive tabs
+bg         = "#15181d"   # editor.background
+hover      = "#1d2129"   # list.activeSelectionBackground
+line       = "#20252e"   # editor.lineHighlight, active tab
+selection  = "#252b36"   # editor.selectionBackground
+search     = "#2c3b57"   # editor.findMatchBackground
 
 # ---- text and UI greys
 fg         = "#abb2bf"   # terminal.foreground, ordinary text
 fg_bright  = "#d7dae0"   # selected list items, ansiWhite
-fg_dim     = "#9da5b4"   # statusBar.foreground
-comment    = "#676f7d"   # comments
-grey       = "#7f848e"   # ansiBrightBlack
-scrollbar  = "#4e5666"   # scrollbarSlider
-gutter     = "#495162"   # editorLineNumber.foreground
-whitespace = "#484a50"   # editorWhitespace.foreground
-border     = "#3b4048"   # editorIndentGuide, pane borders
-black      = "#2d3139"   # ansiBlack
+fg_dim     = "#8a93a5"   # statusBar.foreground
+comment    = "#656d7a"   # comments
+grey       = "#727781"   # ansiBrightBlack
+scrollbar  = "#464d5c"   # scrollbarSlider
+gutter     = "#424958"   # editorLineNumber.foreground
+whitespace = "#414348"   # editorWhitespace.foreground
+border     = "#353a41"   # editorIndentGuide, pane borders
+black      = "#262a30"   # ansiBlack
 cursor     = "#f8f8f0"   # editorCursor.foreground
 white      = "#ffffff"
 
 # ---- syntax and terminal colours
-red         = "#ff505e"  # keywords, storage, tags
-red_bright  = "#f44747"  # ansiBrightRed
-red_dark    = "#c24038"  # editorError.foreground
-orange      = "#e49346"  # function parameters
+red         = "#fb598a"  # keywords, storage, tags
+red_bright  = "#f55a5a"  # ansiBrightRed
+red_dark    = "#c94d45"  # editorError.foreground
+orange      = "#e79d58"  # function parameters
 yellow      = "#f7e187"  # strings
-green       = "#8cc761"  # functions, inherited classes
-cyan        = "#32b8c9"  # types, constants, JSON keys
-blue        = "#4dafff"  # classes, variables, links
-blue_ansi   = "#528bff"  # ansiBlue, badges and buttons
-purple      = "#da61fe"  # numbers, ansiMagenta
-purple_dark = "#7e0097"  # ansiBrightMagenta
+green       = "#97cc70"  # functions, inherited classes
+cyan        = "#40bfcf"  # types, constants, JSON keys
+blue        = "#61b8ff"  # classes, variables, links
+blue_ansi   = "#6699ff"  # ansiBlue, badges and buttons
+purple      = "#df75fe"  # numbers, ansiMagenta
+purple_dark = "#8f00ab"  # ansiBrightMagenta
 
 # ---- VS Code only (one-monokai-darker.json UI)
-bg_input         = "#101216"  # dropdown.background, input.background
-bg_activity      = "#1c2028"  # activityBar.background, debugToolBar
-list_hover       = "#1e222a"  # list.hoverBackground
-search_other     = "#25334f"  # editor.findMatchHighlightBackground
-ruler            = "#484848"  # editorRuler.foreground
-scrollbar_hover  = "#5a6375"  # scrollbarSlider.hoverBackground
-scrollbar_active = "#747d91"  # scrollbarSlider.activeBackground
-title_inactive   = "#6b717d"  # titleBar.inactiveForeground
+bg_input         = "#0e0f13"  # dropdown.background, input.background
+bg_activity      = "#181b22"  # activityBar.background, debugToolBar
+list_hover       = "#191d24"  # list.hoverBackground
+search_other     = "#1f2b43"  # editor.findMatchHighlightBackground
+ruler            = "#414141"  # editorRuler.foreground
+scrollbar_hover  = "#515969"  # scrollbarSlider.hoverBackground
+scrollbar_active = "#687083"  # scrollbarSlider.activeBackground
+title_inactive   = "#606670"  # titleBar.inactiveForeground
 list_highlight   = "#c5c5c5"  # list.highlightForeground
 badge_fg         = "#f8fafd"  # activityBarBadge.foreground
-teal             = "#00809b"  # diffEditor.insertedTextBackground (with alpha)
+teal             = "#0091af"  # diffEditor.insertedTextBackground (with alpha)
 true_black       = "#000000"  # editorUnnecessaryCode.opacity (with alpha)
 
 # ---- from the theme's legacy token rules

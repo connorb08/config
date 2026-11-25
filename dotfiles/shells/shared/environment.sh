@@ -17,7 +17,7 @@ export COLORTERM="${COLORTERM:-truecolor}"
 
 # jq output (and yazi's JSON previews, which use jq) in Neovim's colours:
 # null/false/true, numbers, strings, arrays, objects, object keys.
-export JQ_COLORS="0;38;2;50;184;201:0;38;2;50;184;201:0;38;2;50;184;201:0;38;2;218;97;254:0;38;2;247;225;135:0;38;2;171;178;191:0;38;2;171;178;191:0;38;2;50;184;201"
+export JQ_COLORS="0;38;2;64;191;207:0;38;2;64;191;207:0;38;2;64;191;207:0;38;2;223;117;254:0;38;2;247;225;135:0;38;2;171;178;191:0;38;2;171;178;191:0;38;2;64;191;207"
 
 # $SHELL names the shell that is running, not just the login shell, so tools
 # that start "your shell" (tmux panes, editors, `exec $SHELL`) start this one.

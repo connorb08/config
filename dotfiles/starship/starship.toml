@@ -31,18 +31,18 @@ $character"""
 
 # One Monokai Darker, matching dotfiles/wezterm/theme.lua and tmux.conf.
 [palettes.one_monokai_darker]
-bg_dark = "#13161b"
-bg_panel = "#262c36"
-bg_accent = "#2c3340"
+bg_dark = "#101317"
+bg_panel = "#20252e"
+bg_accent = "#252b36"
 fg = "#abb2bf"
-muted = "#676f7d"
-red = "#ff505e"
+muted = "#656d7a"
+red = "#fb598a"
 yellow = "#f7e187"
-green = "#8cc761"
-cyan = "#32b8c9"
-blue = "#4dafff"   # the theme's class/type colour, used for locations
-purple = "#da61fe"
-orange = "#e49346"
+green = "#97cc70"
+cyan = "#40bfcf"
+blue = "#61b8ff"   # the theme's class/type colour, used for locations
+purple = "#df75fe"
+orange = "#e79d58"
 
 
 [directory]
@@ -253,15 +253,15 @@ vimcmd_symbol = "[❮](bold cyan)"
 
 # # Terminal colors plus syntax accents from the One Monokai Darker source theme.
 # [palettes.one_monokai_darker]
-# background = "#191c22"
-# current_line = "#262c36"
+# background = "#15181d"
+# current_line = "#20252e"
 # foreground = "#abb2bf"
-# comment = "#676f7d"
-# blue = "#528bff"
-# aqua = "#4dafff"
-# cyan = "#32b8c9"
-# green = "#8cc761"
-# purple = "#da61fe"
-# red = "#ff505e"
+# comment = "#656d7a"
+# blue = "#6699ff"
+# aqua = "#61b8ff"
+# cyan = "#40bfcf"
+# green = "#97cc70"
+# purple = "#df75fe"
+# red = "#fb598a"
 # yellow = "#f7e187"
-# orange = "#e49346"
+# orange = "#e79d58"
