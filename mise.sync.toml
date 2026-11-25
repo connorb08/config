@@ -1,14 +1,15 @@
-# Enable: mise -C ~/repos/connorb08/config -E sync bootstrap services apply
-# Check:  mise -C ~/repos/connorb08/config -E sync bootstrap services status
-# Remove: mise -C ~/repos/connorb08/config -E sync bootstrap services remove dotfiles-sync
+# Run these from the checkout, wherever it is cloned:
+#   Enable: mise -E sync bootstrap services apply
+#   Check:  mise -E sync bootstrap services status
+#   Remove: mise -E sync bootstrap services remove dotfiles-sync
 [bootstrap.services.dotfiles-sync]
 scope = "user"
 description = "Commit, pull and push the dotfiles checkout every 10 minutes"
 # Service commands are not templated ({{ config_root }} stays literal) and run
-# with launchd/systemd's bare PATH, so the checkout is named here and mise is
-# looked up in its usual install locations. The shell does the cd: systemd's
-# WorkingDirectory does not expand ~/ the way launchd's does. Change the path
-# if the repo lives elsewhere. macOS/Linux only (needs /bin/sh).
-command = "/bin/sh -c 'cd \"$HOME/repos/connorb08/config\" && PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\" exec mise run dotfiles:autosync'"
+# with launchd/systemd's bare PATH. So the shell finds the checkout itself, by
+# following the ~/.config/starship.toml link that `mise dot apply` points into
+# it (clone it anywhere, apply the dotfiles first), and mise is looked up in
+# its usual install locations. macOS/Linux only (needs /bin/sh).
+command = "/bin/sh -c 'link=$(readlink -f \"$HOME/.config/starship.toml\") && repo=${link%/dotfiles/*} && cd \"$repo\" && PATH=\"$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\" exec mise run dotfiles:autosync'"
 restart = "always"
 requires_tools = true
