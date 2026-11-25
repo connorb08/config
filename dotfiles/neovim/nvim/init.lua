@@ -8,6 +8,12 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
+-- One fixed-width, right-aligned number column: the current line's absolute
+-- number would otherwise sit left-aligned while the relative ones sit right,
+-- so the column looked indented and shifted from line to line. Wrapped
+-- continuation lines get no number.
+vim.opt.numberwidth = 4
+vim.opt.statuscolumn = "%s%=%{v:virtnum ? '' : (v:relnum ? v:relnum : v:lnum)} "
 vim.opt.scrolloff = 8
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
