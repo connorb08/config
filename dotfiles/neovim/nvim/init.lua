@@ -4,16 +4,12 @@ vim.g.maplocalleader = "\\"
 
 -- Options
 vim.opt.termguicolors = true
+-- Plain line numbers, as in VS Code: relative numbers change on every cursor
+-- move and put the current line's number out of line with the rest.
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
--- One fixed-width, right-aligned number column: the current line's absolute
--- number would otherwise sit left-aligned while the relative ones sit right,
--- so the column looked indented and shifted from line to line. Wrapped
--- continuation lines get no number.
-vim.opt.numberwidth = 4
-vim.opt.statuscolumn = "%s%=%{v:virtnum ? '' : (v:relnum ? v:relnum : v:lnum)} "
 vim.opt.scrolloff = 8
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -27,6 +23,21 @@ vim.opt.splitbelow = true
 vim.opt.updatetime = 250
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
+-- Over SSH, copy through the terminal (OSC 52, which WezTerm and tmux pass on)
+-- instead of xclip/xsel: with X11 forwarding those start an X server (XQuartz)
+-- on the Mac every time. Pasting uses the terminal's own paste (Cmd-V); "+p
+-- reads back what was last yanked here, since terminals don't answer OSC 52 reads.
+if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  local function paste()
+    return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
+  end
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
+    paste = { ["+"] = paste, ["*"] = paste },
+  }
+end
 vim.opt.confirm = true
 
 -- Keymaps
