@@ -49,6 +49,100 @@ url = "https://github.com/FiloSottile/age/releases/download/v1.3.2/age-v1.3.2-wi
 url_api = "https://api.github.com/repos/FiloSottile/age/releases/assets/535541937"
 provenance = "github-attestations"
 
+[[tools."aqua:joshmedeski/sesh"]]
+version = "2.34.0"
+backend = "aqua:joshmedeski/sesh"
+specifiers = ["2.34.0"]
+
+[tools."aqua:joshmedeski/sesh"."platforms.linux-arm64"]
+checksum = "sha256:8f9b369ac2164846120da4ebdce465a6803737a8a0879a334635441d050dcef5"
+checksum_source = "mise-versions"
+url = "https://github.com/joshmedeski/sesh/releases/download/v2.34.0/sesh_Linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/joshmedeski/sesh/releases/assets/675419616"
+
+[tools."aqua:joshmedeski/sesh"."platforms.linux-arm64-musl"]
+checksum = "sha256:8f9b369ac2164846120da4ebdce465a6803737a8a0879a334635441d050dcef5"
+checksum_source = "mise-versions"
+url = "https://github.com/joshmedeski/sesh/releases/download/v2.34.0/sesh_Linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/joshmedeski/sesh/releases/assets/675419616"
+
+[tools."aqua:joshmedeski/sesh"."platforms.linux-x64"]
+checksum = "sha256:ca5742e47ee31b3181c4cb4fa0b6486bf357982600f313a2a5794303cb2063f2"
+checksum_source = "mise-versions"
+url = "https://github.com/joshmedeski/sesh/releases/download/v2.34.0/sesh_Linux_x86_64.tar.gz"
+url_api = "https://api.github.com/repos/joshmedeski/sesh/releases/assets/675419570"
+
+[tools."aqua:joshmedeski/sesh"."platforms.linux-x64-musl"]
+checksum = "sha256:ca5742e47ee31b3181c4cb4fa0b6486bf357982600f313a2a5794303cb2063f2"
+checksum_source = "mise-versions"
+url = "https://github.com/joshmedeski/sesh/releases/download/v2.34.0/sesh_Linux_x86_64.tar.gz"
+url_api = "https://api.github.com/repos/joshmedeski/sesh/releases/assets/675419570"
+
+[tools."aqua:joshmedeski/sesh"."platforms.macos-arm64"]
+checksum = "sha256:dc483f35774e8be50a86dd06df7fc068a727cd09033c7bf75c8792f1aec5df4f"
+checksum_source = "mise-versions"
+url = "https://github.com/joshmedeski/sesh/releases/download/v2.34.0/sesh_Darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/joshmedeski/sesh/releases/assets/675419574"
+
+[tools."aqua:joshmedeski/sesh"."platforms.macos-x64"]
+checksum = "sha256:736b8e1cf13b20569fc52e635e72ec8f2876cdc996cfee25afe7c9591eec74b8"
+checksum_source = "mise-versions"
+url = "https://github.com/joshmedeski/sesh/releases/download/v2.34.0/sesh_Darwin_x86_64.tar.gz"
+url_api = "https://api.github.com/repos/joshmedeski/sesh/releases/assets/675419569"
+
+[tools."aqua:joshmedeski/sesh"."platforms.windows-x64"]
+checksum = "sha256:6cbb9177fb4e872c6442dfe8d7733b078230a81c423f5e5a6569167c62f73991"
+checksum_source = "mise-versions"
+url = "https://github.com/joshmedeski/sesh/releases/download/v2.34.0/sesh_Windows_x86_64.zip"
+url_api = "https://api.github.com/repos/joshmedeski/sesh/releases/assets/675419639"
+
+[[tools."aqua:walles/moor"]]
+version = "2.19.7"
+backend = "aqua:walles/moor"
+specifiers = ["2.19.7"]
+
+[tools."aqua:walles/moor"."platforms.linux-arm64"]
+checksum = "sha256:484bf6d8bb86f54b0fc49114b1ba4b4f2413675a22ae1bb807d9482e40062ba4"
+checksum_source = "mise-versions"
+url = "https://github.com/walles/moor/releases/download/v2.19.7/moor-v2.19.7-linux-arm64"
+url_api = "https://api.github.com/repos/walles/moor/releases/assets/747698826"
+
+[tools."aqua:walles/moor"."platforms.linux-arm64-musl"]
+checksum = "sha256:484bf6d8bb86f54b0fc49114b1ba4b4f2413675a22ae1bb807d9482e40062ba4"
+checksum_source = "mise-versions"
+url = "https://github.com/walles/moor/releases/download/v2.19.7/moor-v2.19.7-linux-arm64"
+url_api = "https://api.github.com/repos/walles/moor/releases/assets/747698826"
+
+[tools."aqua:walles/moor"."platforms.linux-x64"]
+checksum = "sha256:a801ef63117717a61d2b22d258ae0196fc399a87dc3f4770e029d5b1bc5a4988"
+checksum_source = "mise-versions"
+url = "https://github.com/walles/moor/releases/download/v2.19.7/moor-v2.19.7-linux-amd64"
+url_api = "https://api.github.com/repos/walles/moor/releases/assets/747698938"
+
+[tools."aqua:walles/moor"."platforms.linux-x64-musl"]
+checksum = "sha256:a801ef63117717a61d2b22d258ae0196fc399a87dc3f4770e029d5b1bc5a4988"
+checksum_source = "mise-versions"
+url = "https://github.com/walles/moor/releases/download/v2.19.7/moor-v2.19.7-linux-amd64"
+url_api = "https://api.github.com/repos/walles/moor/releases/assets/747698938"
+
+[tools."aqua:walles/moor"."platforms.macos-arm64"]
+checksum = "sha256:b4774bda250b09746e75edfa4a24f6d496305b848a5208392395d756a748ae1e"
+checksum_source = "mise-versions"
+url = "https://github.com/walles/moor/releases/download/v2.19.7/moor-v2.19.7-darwin-arm64"
+url_api = "https://api.github.com/repos/walles/moor/releases/assets/747698706"
+
+[tools."aqua:walles/moor"."platforms.macos-x64"]
+checksum = "sha256:93de5b1b3a2a14713a15730d25258fb59d3166a8326fb0acc96985e4194daa2b"
+checksum_source = "mise-versions"
+url = "https://github.com/walles/moor/releases/download/v2.19.7/moor-v2.19.7-darwin-amd64"
+url_api = "https://api.github.com/repos/walles/moor/releases/assets/747698770"
+
+[tools."aqua:walles/moor"."platforms.windows-x64"]
+checksum = "sha256:af68b1cff597a9bf6fefbe76c656fea00422ac17511b136a7b32fe53cea5f0da"
+checksum_source = "mise-versions"
+url = "https://github.com/walles/moor/releases/download/v2.19.7/moor-v2.19.7-windows-amd64.exe"
+url_api = "https://api.github.com/repos/walles/moor/releases/assets/747698616"
+
 [[tools.aws]]
 version = "2.42.2"
 backend = "aqua:aws/aws-cli"

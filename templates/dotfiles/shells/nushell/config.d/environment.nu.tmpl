@@ -21,6 +21,8 @@ if ($env.COLORTERM? | is-empty) { $env.COLORTERM = "truecolor" }
 $env.JQ_COLORS = "0;38;2;{{ cyan.rgb }}:0;38;2;{{ cyan.rgb }}:0;38;2;{{ cyan.rgb }}:0;38;2;{{ purple.rgb }}:0;38;2;{{ yellow.rgb }}:0;38;2;{{ fg.rgb }}:0;38;2;{{ fg.rgb }}:0;38;2;{{ cyan.rgb }}"
 # $SHELL names the shell that is running, not just the login shell.
 $env.SHELL = $nu.current-exe
+$env.PAGER = "moor"
+$env.MOOR = "--no-linenumbers --quit-if-one-screen"
 $env.LESS = "-FRX"
 if $nu.os-info.name != "windows" {
     $env.MANPAGER = "sh -c 'col -bx | bat --language=man --plain'"

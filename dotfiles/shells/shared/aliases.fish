@@ -12,8 +12,9 @@ if type -q eza
     alias lt 'eza --tree --level=2 --icons=auto --group-directories-first'
 end
 if type -q bat
-    alias cat 'bat --paging=never'
+    alias cat 'bat --paging=auto'
 end
+alias v 'bat --paging=always'
 if type -q rg
     alias grep 'rg'
 end
@@ -21,6 +22,8 @@ if type -q fd
     alias find 'fd'
 end
 abbr -a o nvim
+alias vi 'nvim'
+alias vim 'nvim'
 abbr -a g git
 alias python 'python3'
 alias pip 'pip3'

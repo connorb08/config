@@ -1,6 +1,7 @@
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-set -gx PAGER less
+set -gx PAGER moor
+set -gx MOOR "--no-linenumbers --quit-if-one-screen"
 set -gx LESS -FRX
 # Silences macOS bash's "default shell is now zsh" notice in any bash started from here.
 set -gx BASH_SILENCE_DEPRECATION_WARNING 1

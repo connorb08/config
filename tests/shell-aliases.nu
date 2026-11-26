@@ -10,7 +10,7 @@ assert ($posix | str contains "alias g='git'")
 assert ($fish | str contains "abbr -a g git")
 assert not ($fish | str contains "alias .. ")
 assert ($nushell | str contains "alias ll = ls -l")
-assert ($nushell | str contains "alias cat = ^bat --paging=never")
+assert ($nushell | str contains "alias cat = ^bat --paging=auto")
 assert not ($nushell | str contains "alias ls =")
 assert not ($nushell | str contains "alias find =")
 # [git] shortcuts reach every shell; fish expands them as abbreviations.

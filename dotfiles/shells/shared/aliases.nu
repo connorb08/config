@@ -2,9 +2,12 @@
 alias ll = ls -l
 alias la = ls -la
 alias lt = ^eza --tree --level=2 --icons=auto --group-directories-first
-alias cat = ^bat --paging=never
+alias cat = ^bat --paging=auto
+alias v = ^bat --paging=always
 alias grep = ^rg
 alias o = ^nvim
+alias vi = ^nvim
+alias vim = ^nvim
 alias g = ^git
 alias ga = ^git add
 alias gaa = ^git add --all

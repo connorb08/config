@@ -12,8 +12,9 @@ if command -v eza >/dev/null 2>&1; then
     alias lt='eza --tree --level=2 --icons=auto --group-directories-first'
 fi
 if command -v bat >/dev/null 2>&1; then
-    alias cat='bat --paging=never'
+    alias cat='bat --paging=auto'
 fi
+alias v='bat --paging=always'
 if command -v rg >/dev/null 2>&1; then
     alias grep='rg'
 fi
@@ -21,6 +22,8 @@ if command -v fd >/dev/null 2>&1; then
     alias find='fd'
 fi
 alias o='nvim'
+alias vi='nvim'
+alias vim='nvim'
 alias g='git'
 alias python='python3'
 alias pip='pip3'
