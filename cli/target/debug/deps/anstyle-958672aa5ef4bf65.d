@@ -1,0 +1,12 @@
+/Users/connor/config-sync/cli/target/debug/deps/anstyle-958672aa5ef4bf65.d: /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/lib.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/macros.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/color.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/effect.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/reset.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/style.rs
+
+/Users/connor/config-sync/cli/target/debug/deps/libanstyle-958672aa5ef4bf65.rlib: /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/lib.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/macros.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/color.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/effect.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/reset.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/style.rs
+
+/Users/connor/config-sync/cli/target/debug/deps/libanstyle-958672aa5ef4bf65.rmeta: /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/lib.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/macros.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/color.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/effect.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/reset.rs /Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/style.rs
+
+/Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/lib.rs:
+/Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/macros.rs:
+/Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/color.rs:
+/Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/effect.rs:
+/Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/reset.rs:
+/Users/connor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anstyle-1.0.14/src/style.rs:

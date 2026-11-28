@@ -8,3 +8,8 @@ if not type -q brew
     end
 end
 fish_add_path --global $HOME/.local/bin
+if test -n "$CARGO_HOME"
+    fish_add_path --global "$CARGO_HOME/bin"
+else
+    fish_add_path --global $HOME/.cargo/bin
+end

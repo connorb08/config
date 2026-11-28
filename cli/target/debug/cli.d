@@ -1,0 +1,1 @@
+/Users/connor/config-sync/cli/target/debug/cli: /Users/connor/config-sync/cli/src/cli.rs /Users/connor/config-sync/cli/src/core.rs /Users/connor/config-sync/cli/src/main.rs /Users/connor/config-sync/cli/src/tui.rs
