@@ -1,18 +1,9 @@
-# Global fnox config: linked to ~/.config/fnox/config.toml.
-#
-# fnox hands secrets to commands as environment variables, reading them at
-# that moment from a provider. The provider here is the gopass store, so no
-# secret value is ever written in this file or in a project.
-#
-# A project lists the secrets it needs in its own fnox.toml, using this
-# provider. See "Secrets" in the README.
-
 [providers.gopass]
 type = "gopass"
 
-# Secrets listed here are available in every directory, through
-# `fnox exec -- <command>` and `fnox get <NAME>`. `env = "exec"` keeps them
-# out of shells that use `fnox activate`.
-[secrets]
-# NAME = { provider = "gopass", value = "<path in gopass>", env = "exec" }
-ARTIFACTORY_PASSWORD = { provider = "gopass", value = "work/artifactory/password", env = "exec", description = "Artifactory password" }
+[profiles.work.providers.gopass]
+type = "gopass"
+
+[profiles.work.secrets]
+DATABASE_URL = { provider = "gopass", value = "work/artifactory/password", env = "exec", description = "Artifactory password" }
+
