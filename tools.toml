@@ -11,7 +11,7 @@ bitwarden-secrets-manager = "2.1.0"
 carapace = "1.8.5" # completions for nushell
 delta = "0.22.0"
 dust = "1.2.7"
-eza = "0.23.5"
+eeza = "0.23.5"
 fd = "10.5.2"
 fish = "4.9.3"
 fnox = "1.50.0" # secrets from gopass for tasks and commands; see README, "Secrets"
@@ -39,3 +39,9 @@ zoxide = "0.10.0"
 [tool_alias]
 neovim = "aqua:neovim/neovim"
 fish = "aqua:fish-shell/fish-shell"
+
+[tools."http:exiftool"]
+version = "13.64"
+url = "https://sourceforge.net/projects/exiftool/files/Image-ExifTool-{{version}}.tar.gz/download"
+bin = "exiftool"
+
